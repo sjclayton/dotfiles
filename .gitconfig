@@ -1,0 +1,5 @@
+[user]
+	email = shaun.j.clayton@gmail.com
+	name = Shaun J. Clayton
+[credential]
+	helper = cache --timeout=3600
