@@ -1,5 +1,7 @@
 export ZSH_CUSTOM=/usr/share/zsh
 export ZSH_SHAUN=$HOME/.zsh
+export DEFAULT_USER="shaun"
+export EDITOR="nvim"
 
 # Turn off static titles ($ autotitle)
 autotitle() { export TITLE_OVERRIDDEN=0 }; autotitle

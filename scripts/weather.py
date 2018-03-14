@@ -69,15 +69,6 @@ def get_current_forecast(options, forecast):
     icon_str = currently.icon
     return (temp, icon_str)
 
-def notify_forecast(location, hourly_summary, daily_summary):
-    '''Send notification with detailed forecast'''
-
-    import subprocess
-    title = u"Weather - {}".format(location)
-    message = u"Hourly Summary:\n{0}\n\n".format(hourly_summary)
-    message += u"Daily Summary:\n{0}".format(daily_summary)
-    subprocess.Popen(['notify-send', title, message])
-
 def get_icon_hex(options, icon_str):
     ''' Returns the appropriate icons for current weather and unit indication
        All Hex Codes from https://erikflowers.github.io/weather-icons/'''
@@ -135,17 +126,10 @@ def main ():
     forecast = forecastio.load_forecast(options.api_key, lat, lon)
     (temp, icon_str) = get_current_forecast(options, forecast)
 
-    # If the weather icon is pressed, this environment variable will be set.
-    buttonPressed = os.environ.get('BLOCK_BUTTON', None)
-    
-    # Send a notification with a more detailed forecast
-    if buttonPressed:
-        notify_forecast(location, forecast.minutely().summary, forecast.hourly().summary)
-
     # Translate icon & unit information into hex codes
     (degrees_hex, icon_hex) = get_icon_hex(options, icon_str)
 
-    # i3blocks uses pango to render the following output into the desired icons
+    # Output conditions and temperature.
     print("{0} {1}°".format(icon_hex, temp))
 
 if __name__ == "__main__":

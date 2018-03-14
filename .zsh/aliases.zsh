@@ -4,7 +4,7 @@
 
 # Helpers
 alias sudo="sudo -E"
-alias config="git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+alias cfg="git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 
 # Shortcuts
 alias cls="clear"
