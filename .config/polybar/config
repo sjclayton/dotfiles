@@ -46,13 +46,14 @@ module-margin-right = 2
 
 font-0 = Fira Sans:style=Regular:pixelsize=10:antialias=true;1
 font-1 = FuraMono Nerd Font:style=Regular:pixelsize=11:antialias=false;2
+font-2 = Weather Icons:style=Regular:pixelsize=11:antialias=false;2
 ;font-0 = fixed:pixelsize=10;1
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 ;font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm i3 spotify
 modules-center = 
-modules-right = filesystem pulseaudio memory cpu wlan battery temperature date
+modules-right = filesystem pulseaudio memory cpu wlan battery temperature date weather
 
 tray-position = right
 tray-padding = 2
@@ -78,6 +79,14 @@ type = custom/script
 exec = ~/scripts/spotify.py
 exec-if = pgrep -x spotify
 interval = 5
+
+[module/weather]
+type = custom/script
+exec = ~/scripts/weather.py -f -a '43.3719,-80.9837' -k 17e3b70f6de51d841024411267583019
+interval = 300
+label = %output%
+format-underline = #0a6cf5
+label-font = 3
 
 [module/xwindow]
 type = internal/xwindow

@@ -92,33 +92,33 @@ def get_icon_hex(options, icon_str):
 
     # Hex codes for the icon which indicates the current weather.
     if icon_str == 'clear-day':
-        icon_hex='f00d'
+        icon_hex=''
     elif icon_str == 'clear-night':
-        icon_hex='f02e'
+        icon_hex=''
     elif icon_str == 'rain':
-        icon_hex='f019'
+        icon_hex=''
     elif icon_str == 'snow':
-        icon_hex='f01b'
+        icon_hex=''
     elif icon_str == 'sleet':
-        icon_hex='f0b5'
+        icon_hex=''
     elif icon_str == 'wind':
-        icon_hex='f050'
+        icon_hex=''
     elif icon_str == 'fog':
-        icon_hex='f014'
+        icon_hex=''
     elif icon_str == 'cloudy':
-        icon_hex='f013'
+        icon_hex=''
     elif icon_str == 'partly-cloudy-day':
-        icon_hex = 'f002'
+        icon_hex = ''
     elif icon_str == 'partly-cloudy-night':
-        icon_hex = 'f083'
+        icon_hex = ''
     elif icon_str == 'thunderstorm':
-        icon_hex = 'f016'
+        icon_hex = ''
     elif icon_str == 'hail':
-        icon_hex = 'f015'
+        icon_hex = ''
     elif icon_str == 'tornado':
-        icon_hex = 'f056'
+        icon_hex = ''
     else:
-        icon_hex = 'f07b' # N/A
+        icon_hex = '' # N/A
     return (degrees_hex, icon_hex)
 
 def main ():
@@ -146,7 +146,7 @@ def main ():
     (degrees_hex, icon_hex) = get_icon_hex(options, icon_str)
 
     # i3blocks uses pango to render the following output into the desired icons
-    print("<span font_desc='Weather Icons 10'>&#x{0};</span> {1}°".format(icon_hex, temp))
+    print("{0} {1}°".format(icon_hex, temp))
 
 if __name__ == "__main__":
     main()
