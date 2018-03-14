@@ -53,7 +53,7 @@ font-2 = Weather Icons:style=Regular:pixelsize=11:antialias=false;2
 
 modules-left = bspwm i3 spotify
 modules-center = 
-modules-right = filesystem pulseaudio memory cpu wlan battery temperature date weather
+modules-right = filesystem memory cpu wlan battery temperature date weather pulseaudio
 
 tray-position = right
 tray-padding = 2
@@ -114,7 +114,7 @@ interval = 25
 
 mount-0 = /home
 
-label-mounted = %{F#0a81f5}~%{F-}: %percentage_used%%
+label-mounted = %{F#0a81f5}~ %{F-}: %free%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 

@@ -175,13 +175,13 @@ bindsym $mod+bracketright exec playerctl next
 bindsym $mod+bracketleft exec playerctl previous
 
 # change volume or toggle mute
-bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%-
+bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle
 
-bindsym $mod+equal exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks
-bindsym $mod+minus exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
-bindsym $mod+Shift+backslash exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
+bindsym $mod+equal exec amixer -q -D pulse sset Master 5%+
+bindsym $mod+minus exec amixer -q -D pulse sset Master 5%-
+bindsym $mod+Shift+backslash exec amixer -q -D pulse sset Master toggle
 
 # Hiding edge borders
 hide_edge_borders smart
@@ -190,17 +190,3 @@ hide_edge_borders smart
 new_window pixel 2
 bindsym $mod+Shift+space "mark --add _; [con_mark=f] floating disable, border pixel 2, mark --add --toggle _; [con_mark=_] floating enable, border normal; mark --add --toggle f;"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-#bar {
-#	output eDP1
-#	tray_output primary
-#	status_command i3blocks -c ~/.config/i3blocks/config-laptop
-#	font pango:Fira Sans 11
-#}
-#bar {
-#	output HDMI1
-#	tray_output primary
-#	status_command i3blocks -c ~/.config/i3blocks/config
-#	font pango:Fira Sans 11
-#}
