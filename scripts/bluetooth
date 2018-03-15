@@ -1,9 +1,0 @@
-#!/bin/sh
-device_mac='FC:58:FA:B4:47:CF'
-pacmd set-card-profile `pacmd list-cards | grep bluez_card -B1 | grep index | awk '{print $2}'` off
-sleep 2 
-echo "disconnect $device_mac"|bluetoothctl
-sleep 5
-echo "connect $device_mac"|bluetoothctl
-sleep 5
-pacmd set-card-profile `pacmd list-cards | grep bluez_card -B1 | grep index | awk '{print $2}'` a2dp_sink

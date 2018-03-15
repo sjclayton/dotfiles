@@ -24,17 +24,7 @@ bindsym $mod+Tab exec --no-startup-id rofi -show drun
 
 # setup workspaces on multiple displays
 workspace "1" output eDP1
-workspace "3" output eDP1
-workspace "5" output eDP1
-workspace "7" output eDP1
-workspace "9" output eDP1
 workspace "2" output HDMI1
-workspace "4" output HDMI1
-workspace "6" output HDMI1
-workspace "8" output HDMI1
-workspace "10" output HDMI1
-
-
 
 # change focus
 bindsym $mod+j focus left
@@ -157,15 +147,19 @@ smart_gaps on
 exec --no-startup-id /usr/lib/notification-daemon-1.0/notification-daemon & sleep 1
 exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec --no-startup-id xset r rate 250 90
-exec --no-startup-id nitrogen --restore && sleep 2
+exec_always --no-startup-id nitrogen --restore && sleep 2
 exec --no-startup-id ~/scripts/polylaunch.sh
 
-# Monitor hotplug keybinding (reload bars)
+# Monitor switch keybinding (reload bars)
 bindsym $mod+x exec --no-startup-id ~/scripts/polylaunch.sh
 
 # Misc bindings
 bindsym XF86Calculator	exec --no-startup-id gnome-calculator
 bindsym XF86MyComputer	exec --no-startup-id $term --title="Ranger" ranger
+
+## Screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight + 5
+bindsym XF86MonBrightnessDown exec xbacklight - 5
 
 ## Audio controls
 # player controls
@@ -186,6 +180,6 @@ bindsym $mod+Shift+backslash exec amixer -q -D pulse sset Master toggle
 hide_edge_borders smart
 
 # Hide titles except on floating windows
-new_window pixel 2
+new_window pixel 1
 bindsym $mod+Shift+space "mark --add _; [con_mark=f] floating disable, border pixel 2, mark --add --toggle _; [con_mark=_] floating enable, border normal; mark --add --toggle f;"
 

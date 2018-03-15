@@ -21,7 +21,7 @@ alert = #bd2c40
 [bar/extra]
 monitor = ${env:MONITOR:eDP-1}
 width = 100%
-height = 27
+height = 25
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -29,21 +29,21 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 2
+border-buttom-size = 1
 border-color = #00000000
 
 padding-left = 0
 padding-right = 2
 
-module-margin = 2
+module-margin = 1
 
-font-0 = Fira Sans:style=Regular:pixelsize=10:antialias=true;1
-font-1 = FuraMono Nerd Font:style=Regular:pixelsize=11:antialias=false;2
-font-2 = Weather Icons:style=Regular:pixelsize=11:antialias=false;2
+font-0 = Fira Mono:style=Bold:pixelsize=9:antialias=true;1
+;font-1 = FuraMono Nerd Font:style=Regular:pixelsize=11:antialias=false;2
+;font-2 = Weather Icons:style=Regular:pixelsize=11:antialias=false;2
 
 modules-left = bspwm i3
 modules-center =
-modules-right =
+modules-right = date
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -53,10 +53,7 @@ enable-ipc = true
 [bar/main]
 monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 27
-;offset-x = 1%
-;offset-y = 1%
-radius = 0.0
+height = 25
 fixed-center = false
 
 background = ${colors.background}
@@ -65,16 +62,16 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 2
+border-bottom-size = 1
 border-color = #00000000
 
 padding-left = 0
 padding-right = 2
 
-module-margin = 2
+module-margin = 1
 
-font-0 = Fira Sans:style=Regular:pixelsize=10:antialias=true;1
-font-1 = FuraMono Nerd Font:style=Regular:pixelsize=11:antialias=false;2
+font-0 = Fira Mono:style=Bold:pixelsize=9:antialias=true;2
+font-1 = FuraMono Nerd Font:style=Regular:pixelsize=11:antialias=false;1
 font-2 = Weather Icons:style=Regular:pixelsize=11:antialias=false;2
 ;font-0 = fixed:pixelsize=10;1
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
@@ -82,7 +79,7 @@ font-2 = Weather Icons:style=Regular:pixelsize=11:antialias=false;2
 
 modules-left = bspwm i3 spotify
 modules-center = 
-modules-right = filesystem memory cpu wlan battery temperature date weather pulseaudio
+modules-right = filesystem cpu memory temperature wlan battery xbacklight pulseaudio date
 
 tray-position = right
 tray-padding = 2
@@ -128,7 +125,7 @@ interval = 25
 
 mount-0 = /home
 
-label-mounted = %{F#0a81f5}~ %{F-}: %free%
+label-mounted = ~ : %free%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -202,19 +199,9 @@ label-song-ellipsis = true
 [module/xbacklight]
 type = internal/xbacklight
 
-format = <label> <bar>
-label = BL
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #ff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
+output = eDP-1
+format = <label>
+label = %percentage%%
 
 [module/backlight-acpi]
 inherit = module/xbacklight
@@ -226,16 +213,16 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
-label = %percentage%%
+format-underline = #23cc40
+label = %percentage:3%%
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
-label = %percentage_used%%
+format-underline = #ff4136
+label = %percentage_used:3%%
 
 [module/wlan]
 type = internal/network
@@ -280,7 +267,7 @@ type = internal/date
 interval = 5
 
 date =
-date-alt = " %Y-%m-%d"
+date-alt = "%Y-%m-%d"
 
 time = %l:%M%p
 time-alt = %l:%M%p
@@ -325,28 +312,26 @@ full-at = 96
 
 label-charging = %percentage%%
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
 
 label-discharging = %percentage%%
 format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+label-full = %percentage%%
+format-full = <label-full>
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-foreground = ${colors.foreground}
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
-animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 750
 
 [module/temperature]
@@ -355,12 +340,12 @@ thermal-zone = 0
 warn-temperature = 65
 
 format = <ramp> <label>
-format-underline = #f50a4d
+format-underline = #f012be
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
-label = %temperature%
-label-warn = %temperature%
+label = %temperature:2%
+label-warn = %temperature:2%
 label-warn-foreground = ${colors.secondary}
 
 ramp-0 = 
@@ -368,37 +353,8 @@ ramp-1 = 
 ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
 
-[module/powermenu]
-type = custom/menu
-
-expand-right = true
-
-format-spacing = 1
-
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
-
 [settings]
-screenchange-reload = true
+screenchange-reload = false
 ;compositing-background = xor
 ;compositing-background = screen
 ;compositing-foreground = source
