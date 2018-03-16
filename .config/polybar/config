@@ -18,10 +18,11 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-[bar/extra]
+[bar/docked]
 monitor = ${env:MONITOR:eDP-1}
 width = 100%
 height = 25
+fixed-center = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -29,7 +30,7 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-buttom-size = 1
+border-bottom-size = 1
 border-color = #00000000
 
 padding-left = 0
@@ -37,7 +38,7 @@ padding-right = 2
 
 module-margin = 1
 
-font-0 = Fira Mono:style=Bold:pixelsize=9:antialias=true;1
+font-0 = Fira Mono:style=Bold:pixelsize=9:antialias=true;2
 ;font-1 = FuraMono Nerd Font:style=Regular:pixelsize=11:antialias=false;2
 ;font-2 = Weather Icons:style=Regular:pixelsize=11:antialias=false;2
 
@@ -125,9 +126,11 @@ interval = 25
 
 mount-0 = /home
 
-label-mounted = ~ : %free%
+label-mounted = ~ %free%
+format-mounted-underline = #0074d9
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
+format-unmounted-underline = ${self.format-mounted-underline}
 
 [module/bspwm]
 type = internal/bspwm
@@ -201,7 +204,7 @@ type = internal/xbacklight
 
 output = eDP-1
 format = <label>
-label = %percentage%%
+label =  %percentage%%
 
 [module/backlight-acpi]
 inherit = module/xbacklight
@@ -211,16 +214,14 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix = ""
 format-underline = #23cc40
 label = %percentage:3%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix = ""
 format-underline = #ff4136
 label = %percentage_used:3%%
 
@@ -316,8 +317,7 @@ format-charging = <animation-charging> <label-charging>
 label-discharging = %percentage%%
 format-discharging = <ramp-capacity> <label-discharging>
 
-label-full = %percentage%%
-format-full = <label-full>
+label-full =  
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -339,19 +339,16 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 65
 
-format = <ramp> <label>
+format = <label>
+format-prefix = " "
 format-underline = #f012be
-format-warn = <ramp> <label-warn>
+format-warn-prefix = " "
+format-warn = <label-warn>
 format-warn-underline = ${self.format-underline}
 
 label = %temperature:2%
 label-warn = %temperature:2%
 label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
 
 [settings]
 screenchange-reload = false

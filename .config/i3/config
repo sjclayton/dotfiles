@@ -19,9 +19,6 @@ bindsym $mod+Return exec --no-startup-id $term
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start program launcher)
-bindsym $mod+Tab exec --no-startup-id rofi -show drun
-
 # setup workspaces on multiple displays
 workspace "1" output eDP1
 workspace "2" output HDMI1
@@ -155,7 +152,7 @@ bindsym $mod+x exec --no-startup-id ~/scripts/polylaunch.sh
 
 # Misc bindings
 bindsym XF86Calculator	exec --no-startup-id gnome-calculator
-bindsym XF86MyComputer	exec --no-startup-id $term --title="Ranger" ranger
+bindsym XF86MyComputer	exec --no-startup-id $term --title "ranger" ranger
 
 ## Screen brightness
 bindsym XF86MonBrightnessUp exec xbacklight + 5

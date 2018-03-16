@@ -14,7 +14,7 @@ if [ -n "$MON0" ] || [ ! "$MON0" = "" ]; then
 	echo $MON1
 	sleep 1
 	polybar -r main &
-	polybar -r extra &
+	polybar -r docked &
 	echo "Bars launched..."
 else
 	echo $MON2
