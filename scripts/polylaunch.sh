@@ -19,7 +19,7 @@ if [ -n "$MON0" ] || [ ! "$MON0" = "" ]; then
 else
 	echo $MON2
 	sleep 1
-	MONITOR=eDP1 polybar -r main &
+	polybar -r mobile &
 	echo "Bar launched..."
 fi
 

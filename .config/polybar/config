@@ -14,7 +14,8 @@ background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
-primary = #ffb52a
+;primary = #ffb52a
+primary = #4286F4
 secondary = #e60053
 alert = #bd2c40
 
@@ -30,7 +31,7 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-bottom-size = 1
+border-size = 0
 border-color = #00000000
 
 padding-left = 0
@@ -42,7 +43,7 @@ font-0 = Fira Mono:style=Bold:pixelsize=9:antialias=true;2
 ;font-1 = FuraMono Nerd Font:style=Regular:pixelsize=11:antialias=false;2
 ;font-2 = Weather Icons:style=Regular:pixelsize=11:antialias=false;2
 
-modules-left = bspwm i3
+modules-left = i3
 modules-center =
 modules-right = date
 
@@ -51,8 +52,8 @@ cursor-scroll = ns-resize
 
 enable-ipc = true
 
-[bar/main]
-monitor = ${env:MONITOR:HDMI-1}
+[bar/mobile]
+monitor = ${env:MONITOR:eDP-1}
 width = 100%
 height = 25
 fixed-center = false
@@ -63,7 +64,7 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-bottom-size = 1
+border-size = 0
 border-color = #00000000
 
 padding-left = 0
@@ -78,9 +79,9 @@ font-2 = Weather Icons:style=Regular:pixelsize=11:antialias=false;2
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 ;font-2 = siji:pixelsize=10;1
 
-modules-left = bspwm i3 spotify
+modules-left = i3 spotify
 modules-center = 
-modules-right = filesystem cpu memory temperature wlan battery xbacklight pulseaudio date
+modules-right = filesystem cpu memory temperature wlan battery xbacklight pulseaudio customdate
 
 tray-position = right
 tray-padding = 2
@@ -102,6 +103,65 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 enable-ipc = true
+
+
+[bar/main]
+monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 25
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin = 1
+
+font-0 = Fira Mono:style=Bold:pixelsize=9:antialias=true;2
+font-1 = FuraMono Nerd Font:style=Regular:pixelsize=11:antialias=false;1
+font-2 = Weather Icons:style=Regular:pixelsize=11:antialias=false;2
+;font-0 = fixed:pixelsize=10;1
+;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+;font-2 = siji:pixelsize=10;1
+
+modules-left = i3 spotify
+modules-center = 
+modules-right = filesystem cpu memory temperature wlan pulseaudio customdate
+
+tray-position = right
+tray-padding = 2
+;tray-transparent = true
+;tray-background = #111111
+
+;wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+enable-ipc = true
+
+[module/customdate]
+type = custom/script
+exec = ~/scripts/customdate.sh
+tail = true
+click-left = kill -USR1 %pid%
 
 [module/spotify]
 type = custom/script

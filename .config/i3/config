@@ -3,7 +3,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 # Basic definitions
-set $term --no-startup-id kitty
+set $term kitty
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -15,11 +15,12 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id $term
+bindsym $mod+Shift+Return exec --no-startup-id $term --class="floatTerm" -o background_opacity=0.90
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# setup workspaces on multiple displays
+# setup initial workspaces on displays
 workspace "1" output eDP1
 workspace "2" output HDMI1
 
@@ -59,7 +60,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+d layout toggle split
 
 # toggle tiling / floating
 #bindsym $mod+Shift+space floating toggle
@@ -145,6 +146,7 @@ exec --no-startup-id /usr/lib/notification-daemon-1.0/notification-daemon & slee
 exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec --no-startup-id xset r rate 250 90
 exec_always --no-startup-id nitrogen --restore && sleep 2
+exec --no-startup-id albert
 exec --no-startup-id ~/scripts/polylaunch.sh
 
 # Monitor switch keybinding (reload bars)
@@ -152,7 +154,9 @@ bindsym $mod+x exec --no-startup-id ~/scripts/polylaunch.sh
 
 # Misc bindings
 bindsym XF86Calculator	exec --no-startup-id gnome-calculator
+bindsym $mod+e exec --no-startup-id $term --title "ranger" ranger
 bindsym XF86MyComputer	exec --no-startup-id $term --title "ranger" ranger
+bindsym XF86Tools exec --no-startup-id $term nvim ~/.config/i3/config
 
 ## Screen brightness
 bindsym XF86MonBrightnessUp exec xbacklight + 5
@@ -180,3 +184,7 @@ hide_edge_borders smart
 new_window pixel 1
 bindsym $mod+Shift+space "mark --add _; [con_mark=f] floating disable, border pixel 2, mark --add --toggle _; [con_mark=_] floating enable, border normal; mark --add --toggle f;"
 
+## Window rules
+#
+# floating terminal
+for_window [class="^floatTerm$"] floating enable resize set 1024 576
