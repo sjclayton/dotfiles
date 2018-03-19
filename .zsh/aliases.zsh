@@ -5,7 +5,7 @@
 # Helpers
 alias cfg="git --git-dir=$HOME/.cfg --work-tree=$HOME"
 alias ls="ls --color=tty --group-directories-first"
-alias sudo="sudo -E"
+alias sudo="nocorrect sudo -E "
 
 # Shortcuts
 alias cls="clear"

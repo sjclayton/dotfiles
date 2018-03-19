@@ -81,7 +81,7 @@ font-2 = Weather Icons:style=Regular:pixelsize=11:antialias=false;2
 
 modules-left = i3 spotify
 modules-center = 
-modules-right = filesystem cpu memory temperature wlan battery xbacklight pulseaudio customdate
+modules-right = filesystem cpu memory temperature battery xbacklight pulseaudio customdate
 
 tray-position = right
 tray-padding = 2
@@ -134,7 +134,7 @@ font-2 = Weather Icons:style=Regular:pixelsize=11:antialias=false;2
 
 modules-left = i3 spotify
 modules-center = 
-modules-right = filesystem cpu memory temperature wlan pulseaudio customdate
+modules-right = filesystem cpu memory temperature pulseaudio customdate
 
 tray-position = right
 tray-padding = 2
@@ -273,14 +273,14 @@ card = intel_backlight
 
 [module/cpu]
 type = internal/cpu
-interval = 2
+interval = 3
 format-prefix = ""
 format-underline = #23cc40
 label = %percentage:3%%
 
 [module/memory]
 type = internal/memory
-interval = 2
+interval = 5
 format-prefix = ""
 format-underline = #ff4136
 label = %percentage_used:3%%
@@ -374,9 +374,10 @@ full-at = 96
 label-charging = %percentage%%
 format-charging = <animation-charging> <label-charging>
 
-label-discharging = %percentage%%
+label-discharging = %time%
 format-discharging = <ramp-capacity> <label-discharging>
 
+time-format = %H:%M
 label-full =  
 
 ramp-capacity-0 = 
@@ -396,6 +397,7 @@ animation-charging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
+interval = 3
 thermal-zone = 0
 warn-temperature = 65
 
@@ -406,8 +408,8 @@ format-warn-prefix = " "
 format-warn = <label-warn>
 format-warn-underline = ${self.format-underline}
 
-label = %temperature:2%
-label-warn = %temperature:2%
+label = %temperature-c:2%
+label-warn = %temperature-c:2%
 label-warn-foreground = ${colors.secondary}
 
 [settings]
