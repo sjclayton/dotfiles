@@ -1,0 +1,17 @@
+# Helpful keybindings
+
+zoom_in k KP_Add
+zoom_out j KP_Subtract
+zoom_fit equal KP_Divide
+zoom_default BackSpace KP_Multiply
+next_img l Right
+prev_img h Left
+
+scroll_up w
+scroll_down s
+scroll_right d
+scroll_left a
+
+toggle_fullscreen f
+save_filelist
+
