@@ -19,6 +19,7 @@ bindsym $mod+Shift+Return exec --no-startup-id $term --class="floatTerm" -o back
 
 # kill focused window
 bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # setup initial workspaces on displays
 workspace "1" output eDP1
@@ -103,7 +104,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+x restart
 # exit i3 (pass control to xfce session manager)
-bindsym $mod+Shift+e exec xfce4-session-logout
+bindsym $mod+Shift+e exec i3-msg exit
 # initiate lock screen
 bindsym $mod+Shift+Delete exec betterlockscreen -l
 
@@ -142,11 +143,14 @@ smart_gaps on
 
 
 # Startup
-exec --no-startup-id /usr/lib/notification-daemon-1.0/notification-daemon & sleep 1
 exec --no-startup-id compton --config ~/.config/compton.conf -b
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id /usr/lib/notification-daemon-1.0/notification-daemon
+exec --no-startup-id nm-applet
 exec --no-startup-id xset r rate 250 90
 exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id xcape -e 'Control_L=Escape'
+exec --no-startup-id udiskie -2 -N &
 exec_always --no-startup-id nitrogen --restore && sleep 2
 exec_always --no-startup-id ~/scripts/polylaunch.sh
 exec --no-startup-id albert
