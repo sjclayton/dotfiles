@@ -40,7 +40,7 @@ padding-right = 2
 module-margin = 1
 
 font-0 = Fira Mono:style=Bold:pixelsize=9:antialias=true;2
-;font-1 = FuraMono Nerd Font:style=Regular:pixelsize=11:antialias=false;2
+;font-1 = FuraMono Nerd Font:style=Regular:pixelsize=12:antialias=true;2
 ;font-2 = Weather Icons:style=Regular:pixelsize=11:antialias=false;2
 
 modules-left = i3
@@ -73,8 +73,8 @@ padding-right = 2
 module-margin = 1
 
 font-0 = Fira Mono:style=Bold:pixelsize=9:antialias=true;2
-font-1 = FuraMono Nerd Font:style=Regular:pixelsize=11:antialias=false;1
-font-2 = Weather Icons:style=Regular:pixelsize=11:antialias=false;2
+font-1 = FuraMono Nerd Font:style=Regular:pixelsize=12:antialias=true;1
+;font-2 = Weather Icons:style=Regular:pixelsize=11:antialias=false;2
 ;font-0 = fixed:pixelsize=10;1
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 ;font-2 = siji:pixelsize=10;1
@@ -126,8 +126,8 @@ padding-right = 2
 module-margin = 1
 
 font-0 = Fira Mono:style=Bold:pixelsize=9:antialias=true;2
-font-1 = FuraMono Nerd Font:style=Regular:pixelsize=11:antialias=false;1
-font-2 = Weather Icons:style=Regular:pixelsize=11:antialias=false;2
+font-1 = FuraMono Nerd Font:style=Regular:pixelsize=12:antialias=true;1
+;font-2 = Weather Icons:style=Regular:pixelsize=11:antialias=false;2
 ;font-0 = fixed:pixelsize=10;1
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 ;font-2 = siji:pixelsize=10;1
