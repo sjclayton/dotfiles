@@ -2,8 +2,6 @@ import os
 
 from ranger.api.commands import Command
 
-# https://github.com/ranger/ranger/wiki/Integrating-File-Search-with-fzf
-# Now, simply bind this function to a key, by adding this to your ~/.config/ranger/rc.conf: map <C-f> fzf_select
 class fzf_select(Command):
     """
     :fzf_select
@@ -32,7 +30,7 @@ class fzf_select(Command):
                 self.fm.cd(fzf_file)
             else:
                 self.fm.select_file(fzf_file)
-# fzf_locate
+
 class fzf_locate(Command):
     """
     :fzf_locate
