@@ -6,6 +6,7 @@
 alias cfg="git --git-dir=$HOME/.cfg --work-tree=$HOME"
 alias ls="ls --color=tty --group-directories-first"
 alias sudo="nocorrect sudo -E "
+alias updateindex="updatedb -l 0 -o ~/.Archive.db -U /var/run/media/shaun/Archive && updatedb -l 0 -o ~/.home.db -U /home/shaun"
 
 # Shortcuts
 alias cls="clear"
