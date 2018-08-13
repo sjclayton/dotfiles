@@ -32,15 +32,6 @@ class fzf_select(Command):
                 self.fm.select_file(fzf_file)
 
 class fzf_locate(Command):
-    """
-    :fzf_locate
-
-    Find a file using fzf.
-
-    With a prefix argument select only directories.
-
-    See: https://github.com/junegunn/fzf
-    """
     def execute(self):
         import subprocess
         if self.quantifier:
@@ -55,3 +46,16 @@ class fzf_locate(Command):
                 self.fm.cd(fzf_file)
             else:
                 self.fm.select_file(fzf_file)
+
+class fasd(Command):
+    """
+    :fasd
+
+    Jump to directory using fasd
+    """
+    def execute(self):
+        import subprocess
+        arg = self.rest(1)
+        if arg:
+            directory = subprocess.check_output(["fasd", "-d"]+arg.split(), universal_newlines=True).strip()
+            self.fm.cd(directory)                

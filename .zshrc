@@ -60,3 +60,7 @@ man(){
     LESS_TERMCAP_us=$'\e[04;33m' \
     command man "$@"
 }
+
+updateindex
+
+eval "$(fasd --init auto)"
