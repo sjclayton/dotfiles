@@ -64,3 +64,4 @@ man(){
 updateindex
 
 eval "$(fasd --init auto)"
+source ~/.zsh/shortcuts.zsh
