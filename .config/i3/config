@@ -15,7 +15,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id $term
-bindsym $mod+Shift+Return exec --no-startup-id $term --class="floatTerm" -o background_opacity=0.90
+bindsym $mod+Shift+Return exec --no-startup-id st
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -146,7 +146,6 @@ smart_gaps on
 exec --no-startup-id compton --config ~/.config/compton.conf -b
 #exec --no-startup-id /usr/lib/notification-daemon-1.0/notification-daemon
 exec --no-startup-id nm-applet
-exec --no-startup-id xset r rate 250 90
 exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id xcape -e 'Control_L=Escape'
 exec --no-startup-id udiskie -2 -N
@@ -158,6 +157,7 @@ exec --no-startup-id albert
 bindsym $mod+x exec --no-startup-id ~/scripts/polylaunch.sh
 
 # Application launch key bindings
+bindsym $mod+Ctrl+a exec --no-startup-id atom
 bindsym $mod+Ctrl+c exec --no-startup-id chromium
 bindsym $mod+Ctrl+s exec --no-startup-id spotify
 bindsym XF86Calculator exec --no-startup-id gnome-calculator
