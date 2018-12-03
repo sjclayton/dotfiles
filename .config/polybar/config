@@ -10,13 +10,12 @@
 [colors]
 ;background = ${xrdb:color0:#222}
 background = #222
-background-alt = #444
+background-alt = #666
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
-;primary = #ffb52a
-primary = #4286F4
-secondary = #e60053
+primary = #00ff00
+secondary = #4286F4
 alert = #bd2c40
 
 [bar/docked]
@@ -41,7 +40,6 @@ module-margin = 1
 
 font-0 = Fira Mono:style=Bold:pixelsize=9:antialias=true;2
 font-1 = FuraMono Nerd Font:style=Regular:pixelsize=12:antialias=true;2
-;font-2 = Weather Icons:style=Regular:pixelsize=11:antialias=false;2
 
 modules-left = i3
 modules-center =
@@ -74,10 +72,6 @@ module-margin = 1
 
 font-0 = Fira Mono:style=Bold:pixelsize=9:antialias=true;2
 font-1 = FuraMono Nerd Font:style=Regular:pixelsize=12:antialias=true;1
-;font-2 = Weather Icons:style=Regular:pixelsize=11:antialias=false;2
-;font-0 = fixed:pixelsize=10;1
-;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-;font-2 = siji:pixelsize=10;1
 
 modules-left = i3 spotify
 modules-center = 
@@ -127,10 +121,6 @@ module-margin = 1
 
 font-0 = Fira Mono:style=Bold:pixelsize=9:antialias=true;2
 font-1 = FuraMono Nerd Font:style=Regular:pixelsize=12:antialias=true;1
-;font-2 = Weather Icons:style=Regular:pixelsize=11:antialias=false;2
-;font-0 = fixed:pixelsize=10;1
-;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-;font-2 = siji:pixelsize=10;1
 
 modules-left = i3 spotify
 modules-center = 
@@ -186,7 +176,7 @@ interval = 25
 
 mount-0 = /home
 
-label-mounted = ~ %free%
+label-mounted = 﫭 %free%
 format-mounted-underline = #0074d9
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
@@ -197,7 +187,7 @@ type = internal/bspwm
 
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
+label-focused-underline = ${colors.primary}
 label-focused-padding = 2
 
 label-occupied = %index%
@@ -228,7 +218,7 @@ ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
 ws-icon-5 = 6;
-ws-icon-6 = 7;
+ws-icon-6 = 7;
 ws-icon-7 = 8;
 ws-icon-8 = 9;
 ws-icon-9 = 10;
@@ -251,8 +241,8 @@ label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %icon%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
+;label-visible-background = #444
+label-visible-underline = ${colors.secondary}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
@@ -296,7 +286,7 @@ label = %percentage:3%%
 [module/memory]
 type = internal/memory
 interval = 5
-format-prefix = ""
+format-prefix = ""
 format-underline = #ff4136
 label = %percentage_used:3%%
 
@@ -425,7 +415,7 @@ format-warn-underline = ${self.format-underline}
 
 label = %temperature-c:2%
 label-warn = %temperature-c:2%
-label-warn-foreground = ${colors.secondary}
+label-warn-foreground = #ff4136
 
 [settings]
 screenchange-reload = false

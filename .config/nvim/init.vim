@@ -9,8 +9,9 @@ if !has('gui')
 	set termguicolors
 endif
 set laststatus=2
-set number " Show line numbers
+set number relativenumber " Show line numbers
 set cursorline " Highlight current line
+set splitbelow splitright
 
 """ Plugins
 
@@ -21,6 +22,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'francoiscabrol/ranger.vim'
+Plug 'PotatoesMaster/i3-vim-syntax'
 
 call plug#end()
 
