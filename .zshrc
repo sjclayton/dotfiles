@@ -65,4 +65,4 @@ updateindex
 
 eval "$(fasd --init auto)"
 source ~/.zsh/shortcuts.zsh
-xset r rate 250 90
+xset r rate 190 90
