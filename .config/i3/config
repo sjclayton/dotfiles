@@ -15,7 +15,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id $term
-bindsym $mod+Shift+Return exec --no-startup-id st
+#bindsym $mod+Shift+Return exec --no-startup-id st
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -24,7 +24,14 @@ bindsym $mod+q kill
 # setup initial workspaces on displays
 workspace "1" output eDP1
 workspace "2" output HDMI1
-workspace "10" output eDP1
+workspace "3" output eDP1
+workspace "4" output HDMI1
+workspace "5" output eDP1
+workspace "6" output HDMI1
+workspace "7" output eDP1
+workspace "8" output HDMI1
+workspace "9" output eDP1
+workspace "10" output HDMI1
 
 # change focus
 bindsym $mod+j focus left
@@ -159,7 +166,7 @@ bindsym $mod+x exec --no-startup-id ~/scripts/polylaunch.sh
 
 # Application workspace assignments, etc
 
-for_window [class="Spotify"] move to workspace 10
+for_window [class="Spotify"] move to workspace 9
 
 # Application launch key bindings
 bindsym $mod+Ctrl+a exec --no-startup-id atom
