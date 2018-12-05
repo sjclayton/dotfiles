@@ -269,7 +269,7 @@ type = internal/xbacklight
 
 output = eDP-1
 format = <label>
-label =  %percentage%%
+label =  %percentage%%
 
 [module/backlight-acpi]
 inherit = module/xbacklight
@@ -383,7 +383,7 @@ label-discharging = %time%
 format-discharging = <ramp-capacity> <label-discharging>
 
 time-format = %H:%M
-label-full =  
+label-full = ﮣ
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 

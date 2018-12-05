@@ -9,8 +9,8 @@
     show_age_threshold = 60
     word_wrap = yes
     ignore_newline = no
-    geometry = "200x5-6+30"
-    transparency = 15
+    geometry = "300x5-8+32"
+    transparency = 10
     idle_threshold = 120
     monitor = 0
     follow = mouse
