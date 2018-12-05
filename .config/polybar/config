@@ -73,7 +73,7 @@ module-margin = 1
 font-0 = Fira Mono:style=Bold:pixelsize=9:antialias=true;2
 font-1 = FuraMono Nerd Font:style=Regular:pixelsize=12:antialias=true;1
 
-modules-left = i3 spotify
+modules-left = i3
 modules-center = 
 modules-right = filesystem cpu memory temperature battery xbacklight pulseaudio customdate
 
@@ -122,7 +122,7 @@ module-margin = 1
 font-0 = Fira Mono:style=Bold:pixelsize=9:antialias=true;2
 font-1 = FuraMono Nerd Font:style=Regular:pixelsize=12:antialias=true;1
 
-modules-left = i3 spotify
+modules-left = i3
 modules-center = 
 modules-right = filesystem cpu memory temperature pulseaudio customdate
 
@@ -279,14 +279,14 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 3
-format-prefix = ""
+format-prefix = "龍"
 format-underline = #23cc40
 label = %percentage:3%%
 
 [module/memory]
 type = internal/memory
 interval = 5
-format-prefix = ""
+format-prefix = ""
 format-underline = #ff4136
 label = %percentage_used:3%%
 
@@ -407,7 +407,7 @@ thermal-zone = 0
 warn-temperature = 65
 
 format = <label>
-format-prefix = " "
+format-prefix = "﨎 "
 format-underline = #f012be
 format-warn-prefix = " "
 format-warn = <label-warn>
