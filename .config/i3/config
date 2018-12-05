@@ -177,7 +177,7 @@ bindsym $mod+Ctrl+a exec --no-startup-id atom
 bindsym $mod+Ctrl+c exec --no-startup-id chromium
 bindsym $mod+Ctrl+s exec --no-startup-id spotify
 bindsym $mod+Ctrl+z exec --no-startup-id gnomecast
-bindsym XF86Calculator exec --no-startup-id gnome-calculator
+bindsym $mod+Shift+d --release exec ~/scripts/dunstreload.sh
 bindsym $mod+e exec --no-startup-id $term --title "ranger" ranger
 bindsym XF86MyComputer exec --no-startup-id $term --title "ranger" ranger
 bindsym XF86Tools exec --no-startup-id $term nvim ~/.config/i3/config
