@@ -75,7 +75,7 @@ font-1 = FuraMono Nerd Font:style=Regular:pixelsize=12:antialias=true;1
 
 modules-left = i3
 modules-center = 
-modules-right = filesystem cpu memory temperature battery xbacklight pulseaudio customdate
+modules-right = filesystem cpu memory temperature battery xbacklight gmail pulseaudio customdate
 
 tray-position = right
 tray-padding = 2
@@ -124,7 +124,7 @@ font-1 = FuraMono Nerd Font:style=Regular:pixelsize=12:antialias=true;1
 
 modules-left = i3
 modules-center = 
-modules-right = filesystem cpu memory temperature pulseaudio customdate
+modules-right = filesystem cpu memory temperature gmail pulseaudio customdate
 
 tray-position = right
 tray-padding = 2
@@ -416,6 +416,12 @@ format-warn-underline = ${self.format-underline}
 label = %temperature-c:2%
 label-warn = %temperature-c:2%
 label-warn-foreground = #ff4136
+
+[module/gmail]
+type = custom/script
+exec = ~/.config/polybar/gmail/launch.py --color '#ff4136' --prefix '' -ns
+tail = true
+click-left = xdg-open https://mail.google.com
 
 [settings]
 screenchange-reload = false
