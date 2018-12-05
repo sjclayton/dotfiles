@@ -408,7 +408,7 @@ warn-temperature = 65
 
 format = <label>
 format-prefix = "﨎 "
-format-underline = #f012be
+format-underline = #ffdc00
 format-warn-prefix = " "
 format-warn = <label-warn>
 format-warn-underline = ${self.format-underline}
