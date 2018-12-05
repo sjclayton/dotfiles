@@ -1,5 +1,5 @@
 [global]
-    font = "Droid Sans 8"
+    font = "Fira Mono Bold 9"
     allow_markup = yes
     format = "<b>%s</b>\n%b"
     sort = yes
@@ -19,7 +19,7 @@
     separator_height = 2
     padding = 8
     horizontal_padding = 8
-    separator_color = "#585858"
+    separator_color = "#555555"
     startup_notification = false
     # https://github.com/knopwob/dunst/issues/26#issuecomment-36159395
     icon_position = left
@@ -37,16 +37,16 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#181818"
-    foreground = "#E3C7AF"
+    background = "#222222"
+    foreground = "#dfdfdf"
     timeout = 5
 
 [urgency_normal]
-    background = "#181818"
-    foreground = "#E3C7AF"
+    background = "#222222"
+    foreground = "#dfdfdf"
     timeout = 20
 
 [urgency_critical]
-    background = "#181818"
-    foreground = "#E3C7AF"
+    background = "#222222"
+    foreground = "#dfdfdf"
     timeout = 0
