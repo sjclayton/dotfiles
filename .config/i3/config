@@ -10,6 +10,9 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:Fira Sans 11
 
+# Color settings
+client.focused #555555 #111111 #ffffff #ffffff #777777
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
