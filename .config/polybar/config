@@ -220,8 +220,8 @@ ws-icon-4 = 5;
 ws-icon-5 = 6;
 ws-icon-6 = 7;
 ws-icon-7 = 8;
-ws-icon-8 = 9;
-ws-icon-9 = 10;
+ws-icon-8 = 9;阮
+ws-icon-9 = 10;ﱦ
 ws-icon-default = 
 
 label-mode = %mode%
@@ -409,7 +409,7 @@ warn-temperature = 65
 format = <label>
 format-prefix = "﨎 "
 format-underline = #ffdc00
-format-warn-prefix = " "
+format-warn-prefix = "﨎 "
 format-warn = <label-warn>
 format-warn-underline = ${self.format-underline}
 
