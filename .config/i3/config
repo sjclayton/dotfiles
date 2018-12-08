@@ -157,8 +157,9 @@ smart_gaps on
 exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
-exec --no-startup-id setxkbmap -option ctrl:nocaps
-exec --no-startup-id xcape -e 'Control_L=Escape'
+exec --no-startup-id ckb-next -c -b
+#exec --no-startup-id setxkbmap -option ctrl:nocaps
+#exec --no-startup-id xcape -e 'Control_L=Escape'
 exec --no-startup-id udiskie -2 -N
 exec_always --no-startup-id nitrogen --restore && sleep 2
 exec_always --no-startup-id ~/scripts/polylaunch.sh
@@ -191,6 +192,11 @@ bindsym XF86MonBrightnessDown exec xbacklight - 5
 bindsym $mod+backslash exec playerctl play-pause
 bindsym $mod+bracketright exec playerctl next
 bindsym $mod+bracketleft exec playerctl previous
+
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioStop exec playerctl stop
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 # change volume or toggle mute
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+
