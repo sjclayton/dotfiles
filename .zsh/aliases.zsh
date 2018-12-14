@@ -9,7 +9,6 @@ alias sudo="nocorrect sudo -E "
 alias updateindex="updatedb -l 0 -o ~/.Archive.db -U /var/run/media/shaun/Archive && updatedb -l 0 -o ~/.home.db -U /home/shaun"
 
 # Shortcuts
-alias cls="clear"
 alias nv="nvim"
 alias vim="nvim"
 alias note="sncli"

@@ -61,7 +61,7 @@ man(){
     command man "$@"
 }
 
-updateindex
+# updateindex
 
 eval "$(fasd --init auto)"
 source ~/.zsh/shortcuts.zsh

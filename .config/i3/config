@@ -16,9 +16,11 @@ client.focused #555555 #222222 #dfdfdf #cccccc #777777
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
+# Start a terminal
 bindsym $mod+Return exec --no-startup-id $term
-#bindsym $mod+Shift+Return exec --no-startup-id st
+
+# Update search indexes
+bindsym $mod+Shift+Return exec --no-startup-id updatedb -l 0 -o ~/.Archive.db -U /var/run/media/shaun/Archive && updatedb -l 0 -o ~/.home.db -U /home/shaun
 
 # kill focused window
 bindsym $mod+Shift+q kill
