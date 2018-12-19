@@ -1,6 +1,8 @@
 """ General
 
 set nocompatible
+let mapleader = ","
+let maplocalleader = ","
 
 " Enable 24-bit color
 
@@ -17,6 +19,7 @@ set number relativenumber " Show line numbers
 set cursorline " Highlight current line
 set splitbelow splitright
 
+
 """ Plugins
 
 call plug#begin('~/.config/nvim/plugged')
@@ -24,11 +27,11 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
-Plug 'rbgrouleff/bclose.vim'
-Plug 'francoiscabrol/ranger.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'rafaqz/ranger.vim'
 
 call plug#end()
+
 
 """ Interface Setup (Themes, colors, etc)
 
@@ -42,15 +45,15 @@ let g:gruvbox_italic=1
 colorscheme gruvbox
 
 
-""" Ranger setup
-
-let g:ranger_map_keys = 1
-let g:ranger_replace_netrw = 1 " open ranger when vim open a directory
-
-
 """ Keymappings (Remappings... =) )
 
 " Swap colon and semicolon
 
 nnoremap ; :
 nnoremap : ;
+
+" Utility mappings
+
+nnoremap <Leader>pi :PlugInstall<cr>
+nnoremap <Leader>pu :PlugUpdate<cr>
+nnoremap <Leader>rr :RangerEdit<cr>
