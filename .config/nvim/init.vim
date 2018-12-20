@@ -1,5 +1,8 @@
-""" General
+"
+" begin Shaun's vimrc
+"
 
+""" General {{{
 set nocompatible
 let mapleader = ","
 let maplocalleader = ","
@@ -18,10 +21,8 @@ set laststatus=2
 set number relativenumber " Show line numbers
 set cursorline " Highlight current line
 set splitbelow splitright
-
-
-""" Plugins
-
+"}}}
+""" Plugins {{{
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
 	silent curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -46,9 +47,8 @@ call plug#end()
 """ Plugin Settings
 
 let g:ctrlp_working_path_mode = 'ca'
-
-
-""" Interface Setup (Themes, colors, etc)
+"}}}
+""" Interface Setup (Themes, colors, etc) {{{
 
 let g:airline_powerline_fonts = 1
 " let g:airline_theme = 'aurora'
@@ -58,9 +58,8 @@ set background=dark
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_italic=1
 colorscheme gruvbox
-
-
-""" Keymappings (Remappings... =) )
+"}}}
+""" Keymappings (Remappings... =) ) {{{
 
 " Sane line scrolling (ignore line wrap)
 nmap j gj
@@ -94,3 +93,6 @@ nnoremap <Leader>rt :RangerTab<cr>
 nnoremap <Leader>ri :RangerInsert<cr>
 nnoremap <Leader>ra :RangerAppend<cr>
 nnoremap <Leader>rc :set operatorfunc=RangerChangeOperator<cr>g@
+"}}}
+
+" vim:fdm=marker
