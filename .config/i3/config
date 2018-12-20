@@ -173,7 +173,6 @@ bindsym $mod+x exec --no-startup-id ~/scripts/polylaunch.sh
 # Application workspace assignments, etc
 
 for_window [class="Spotify"] move to workspace 9
-for_window [class="Gnomecast"] move to workspace 7
 
 # Application launch key bindings
 bindsym $mod+Ctrl+a exec --no-startup-id atom

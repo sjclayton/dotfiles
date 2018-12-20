@@ -35,10 +35,17 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'rafaqz/ranger.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-surround'
 
 call plug#end()
+
+
+""" Plugin Settings
+
+let g:ctrlp_working_path_mode = 'ca'
 
 
 """ Interface Setup (Themes, colors, etc)
@@ -59,20 +66,18 @@ colorscheme gruvbox
 nmap j gj
 nmap k gk
 
+" Swap semi-colon and colon
+nnoremap ; :
+nnoremap : ;
+
+
 "" Utility mappings
 
 nnoremap <leader>sop :source %<cr>
-nnoremap <leader>; :
 
 " fzf
 
-nnoremap <C-p> :FZF<cr>
-imap <c-x><c-w> <plug>(fzf-complete-word)
-imap <c-x><c-p> <plug>(fzf-complete-path)
-imap <c-x><c-f> <plug>(fzf-complete-file)
-nmap <Leader><tab> <plug>(fzf-maps-n)
-xmap <Leader><tab> <plug>(fzf-maps-x)
-omap <Leader><tab> <plug>(fzf-maps-o)
+imap <C-x><C-w> <plug>(fzf-complete-word)
 
 " Plug
 
