@@ -56,16 +56,13 @@ colorscheme gruvbox
 """ Keymappings (Remappings... =) )
 
 " Sane line scrolling (ignore line wrap)
-
 nmap j gj
 nmap k gk
 
-" Swap colon and semicolon
-
-nnoremap ; :
-nnoremap : ;
-
 "" Utility mappings
+
+nnoremap <leader>sop :source %<cr>
+nnoremap <leader>; :
 
 " fzf
 
@@ -81,6 +78,7 @@ omap <Leader><tab> <plug>(fzf-maps-o)
 
 nnoremap <Leader>pi :PlugInstall<cr>
 nnoremap <Leader>pu :PlugUpdate<cr>
+nnoremap <Leader>pc :PlugClean<cr>
 
 " ranger.vim
 
