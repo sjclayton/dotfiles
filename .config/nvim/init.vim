@@ -4,6 +4,7 @@
 
 """ General {{{
 set nocompatible
+set clipboard=unnamedplus
 let mapleader = ","
 let maplocalleader = ","
 
@@ -17,6 +18,7 @@ if !has('gui')
 	set termguicolors
 endif
 
+set dictionary+=/usr/share/dict/words
 set laststatus=2
 set number relativenumber " Show line numbers
 set cursorline " Highlight current line
@@ -37,18 +39,17 @@ Plug 'morhetz/gruvbox'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'rafaqz/ranger.vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug '/usr/bin/fzf'
-Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
+Plug 'ntpeters/vim-better-whitespace'
 
 call plug#end()
-
-
-""" Plugin Settings
+"}}}
+""" Plugin Settings {{{
 
 let g:ctrlp_working_path_mode = 'ca'
+
 "}}}
 """ Interface Setup (Themes, colors, etc) {{{
 
@@ -63,6 +64,16 @@ colorscheme gruvbox
 "}}}
 """ Keymappings (Remappings... =) ) {{{
 
+" Disable arrow keys
+map <Up> <Nop>
+map <Down> <Nop>
+map <Left> <Nop>
+map <Right> <Nop>
+imap <Up> <Nop>
+imap <Down> <Nop>
+imap <Left> <Nop>
+imap <Right> <Nop>
+
 " Sane line scrolling (ignore line wrap)
 nmap j gj
 nmap k gk
@@ -71,14 +82,9 @@ nmap k gk
 nnoremap ; :
 nnoremap : ;
 
-
 "" Utility mappings
 
 nnoremap <leader>sop :source %<cr>
-
-" fzf
-
-imap <C-x><C-w> <plug>(fzf-complete-word)
 
 " Plug
 
