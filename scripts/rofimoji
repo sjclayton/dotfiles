@@ -17,7 +17,7 @@
 #     * You'll need a emoji font like "Noto Emoji" or "EmojiOne".
 #     * Confirming an item will automatically paste it WITHOUT
 #       writing it to your clipboard.
-#     * Ctrl+C will copy it to your clipboard WITHOUT pasting it.
+#     * Alt+C will copy it to your clipboard WITHOUT pasting it.
 #
 
 # Where to save the emojis file.
