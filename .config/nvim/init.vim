@@ -97,7 +97,6 @@ nnoremap <Leader>pc :PlugClean<cr>
 nnoremap <Leader>rr :RangerEdit<cr>
 nnoremap <Leader>rv :RangerVSplit<cr>
 nnoremap <Leader>rs :RangerSplit<cr>
-nnoremap <Leader>rt :RangerTab<cr>
 nnoremap <Leader>ri :RangerInsert<cr>
 nnoremap <Leader>ra :RangerAppend<cr>
 nnoremap <Leader>rc :set operatorfunc=RangerChangeOperator<cr>g@
