@@ -3,21 +3,20 @@
 #
 
 # Helpers
+alias yao="yaourt"
 alias cfg="git --git-dir=$HOME/.cfg --work-tree=$HOME"
 alias ls="ls --color=tty --group-directories-first"
 alias sudo="nocorrect sudo -E "
 alias updateindex="updatedb -l 0 -o ~/.Archive.db -U /var/run/media/shaun/Archive && updatedb -l 0 -o ~/.home.db -U /home/shaun"
 
 # Shortcuts
-alias nv="nvim"
-alias vim="nvim"
 alias note="sncli"
 alias zshrc="$EDITOR ~/.zshrc"
 alias vimcfg="$EDITOR ~/.config/nvim/init.vim"
 alias i3cfg="$EDITOR ~/.config/i3/config"
 alias polycfg="$EDITOR ~/.config/polybar/config"
 alias kittycfg="$EDITOR ~/.config/kitty/kitty.conf"
-alias rccfg="$EDITOR ~/.config/ranger/rc.conf"
+alias rcfg="$EDITOR ~/.config/ranger/rc.conf"
 alias aliases="$EDITOR ~/.zsh/aliases.zsh"
 
 # Just for fun
