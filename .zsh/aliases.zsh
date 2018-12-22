@@ -22,6 +22,5 @@ alias aliases="$EDITOR ~/.zsh/aliases.zsh"
 # Just for fun
 alias neoarch="neofetch --backend ascii --source ~/scripts/archlogo --gap -785"
 alias lolban="postbanner -t '-t -f 3d.flf' -l '-t -p 1'"
-alias cn="chuck | cowthink | lolcat -t"
 alias cookie="fortune -ae computers debian linux linuxcookie | cowsay | lolcat -t"
 alias yolo='git commit -m "$(curl -s whatthecommit.com/index.txt)"'
