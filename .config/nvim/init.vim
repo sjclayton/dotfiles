@@ -37,7 +37,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
 Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'rafaqz/ranger.vim'
+Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
@@ -50,12 +50,12 @@ call plug#end()
 " Plugin Settings {{{
 
 let g:ctrlp_working_path_mode = 'ca'
+let NERDTreeMinimalUI=1
+
 
 "}}}
 " Interface Setup (Themes, colors, etc) {{{
-
 let g:airline_powerline_fonts = 1
-" let g:airline_theme = 'aurora'
 let g:airline_skip_empty_sections = 1
 
 set background=dark
@@ -93,14 +93,10 @@ nnoremap <Leader>pi :PlugInstall<cr>
 nnoremap <Leader>pu :PlugUpdate<cr>
 nnoremap <Leader>pc :PlugClean<cr>
 
-" ranger.vim
+" NERDTree
 
-nnoremap <Leader>rr :RangerEdit<cr>
-nnoremap <Leader>rv :RangerVSplit<cr>
-nnoremap <Leader>rs :RangerSplit<cr>
-nnoremap <Leader>ri :RangerInsert<cr>
-nnoremap <Leader>ra :RangerAppend<cr>
-nnoremap <Leader>rc :set operatorfunc=RangerChangeOperator<cr>g@
+nnoremap <Leader>n :NERDTreeToggle<cr>
+
 "}}}
 
 " vim:fdm=marker
