@@ -151,7 +151,7 @@ bindsym $mod+r mode "resize"
 gaps inner 18
 #gaps outer 5
 smart_gaps on
-
+smart_borders on
 
 # Startup
 exec --no-startup-id compton --config ~/.config/compton.conf -b
@@ -207,13 +207,11 @@ bindsym $mod+minus exec amixer -q -D pulse sset Master 5%-
 bindsym $mod+Shift+backslash exec amixer -q -D pulse sset Master toggle
 
 # Hiding edge borders
-hide_edge_borders smart
+hide_edge_borders smart_no_gaps
 
 # Hide titles except on floating windows
-new_window pixel 1
-bindsym $mod+Shift+space "mark --add _; [con_mark=f] floating disable, border pixel 2, mark --add --toggle _; [con_mark=_] floating enable, border normal; mark --add --toggle f;"
+default_border none
+# bindsym $mod+Shift+space "mark --add _; [con_mark=f] floating disable, border pixel 2, mark --add --toggle _; [con_mark=_] floating enable, border normal; mark --add --toggle f;"
 
 ## Window rules
 #
-# floating terminal
-for_window [class="^floatTerm$"] floating enable resize set 1024 576
