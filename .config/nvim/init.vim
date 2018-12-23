@@ -9,7 +9,6 @@ let mapleader = ","
 let maplocalleader = ","
 
 " Enable 24-bit color
-
 if !has('gui')
 	let &t_8f = "[38;2;%lu;%lu;%lum"
 	let &t_8b = "[48;2;%lu;%lu;%lum"
@@ -20,6 +19,7 @@ endif
 
 set dictionary+=/usr/share/dict/words
 set laststatus=2
+set noshowmode
 set number relativenumber " Show line numbers
 set cursorline " Highlight current line
 set splitbelow splitright
@@ -64,12 +64,14 @@ let NERDTreeNaturalSort = 1
 
 "}}}
 " Interface Setup (Themes, colors, etc) {{{
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_powerline_fonts = 1
-let g:airline_skip_empty_sections = 1
+" let g:airline_skip_empty_sections = 1
 
 set background=dark
 let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_italic=1
+let g:gruvbox_number_column='bg1'
 colorscheme gruvbox
 "}}}
 " Keymappings (Remappings... =) ) {{{
