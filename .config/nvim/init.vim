@@ -23,6 +23,7 @@ set laststatus=2
 set number relativenumber " Show line numbers
 set cursorline " Highlight current line
 set splitbelow splitright
+
 "}}}
 " Plugins {{{
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
@@ -37,7 +38,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
 Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
@@ -50,8 +51,10 @@ call plug#end()
 " Plugin Settings {{{
 
 let g:ctrlp_working_path_mode = 'ca'
-let NERDTreeMinimalUI=1
 
+let NERDTreeMinimalUI = 1
+let NERDTreeShowHidden = 1
+let NERDTreeNaturalSort = 1
 
 "}}}
 " Interface Setup (Themes, colors, etc) {{{
@@ -96,6 +99,7 @@ nnoremap <Leader>pc :PlugClean<cr>
 " NERDTree
 
 nnoremap <Leader>n :NERDTreeToggle<cr>
+nnoremap <Leader>nl :NERDTreeFind<cr>
 
 "}}}
 

@@ -116,9 +116,6 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+x restart
 # exit i3 (pass control to xfce session manager)
 bindsym $mod+Shift+e exec i3-msg exit
-# initiate lock screen
-bindsym $mod+Shift+Delete exec betterlockscreen -l
-
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -158,12 +155,11 @@ exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 exec --no-startup-id ckb-next -c -b
-#exec --no-startup-id setxkbmap -option ctrl:nocaps
-#exec --no-startup-id xcape -e 'Control_L=Escape'
 exec --no-startup-id udiskie -2 -N
 exec_always --no-startup-id nitrogen --restore && sleep 2
 exec_always --no-startup-id ~/scripts/polylaunch.sh
-exec --no-startup-id kupfer
+exec --no-startup-id kupfer --no-splash
+exec --no-startup-id unclutter -b --exclude-root
 
 # Monitor switch keybinding (reload bars)
 bindsym $mod+x exec --no-startup-id ~/scripts/polylaunch.sh
