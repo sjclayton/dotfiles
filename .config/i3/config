@@ -202,12 +202,9 @@ bindsym $mod+equal exec amixer -q -D pulse sset Master 5%+
 bindsym $mod+minus exec amixer -q -D pulse sset Master 5%-
 bindsym $mod+Shift+backslash exec amixer -q -D pulse sset Master toggle
 
-# Hiding edge borders
+# Border settings
 hide_edge_borders smart_no_gaps
-
-# Hide titles except on floating windows
-default_border none
-# bindsym $mod+Shift+space "mark --add _; [con_mark=f] floating disable, border pixel 2, mark --add --toggle _; [con_mark=_] floating enable, border normal; mark --add --toggle f;"
+default_border pixel 1
 
 ## Window rules
 #
