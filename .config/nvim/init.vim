@@ -50,7 +50,13 @@ call plug#end()
 "}}}
 " Plugin Settings {{{
 
+
+" CtrlP
 let g:ctrlp_working_path_mode = 'ca'
+
+" NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'NERDTreeToggle' argv()[0] | endif
 
 let NERDTreeMinimalUI = 1
 let NERDTreeShowHidden = 1

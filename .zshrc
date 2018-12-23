@@ -65,5 +65,4 @@ man(){
 
 eval "$(fasd --init auto)"
 source ~/.zsh/shortcuts.zsh
-# xset r rate 190 90
 xset r rate 200 100

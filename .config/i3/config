@@ -22,11 +22,10 @@ bindsym $mod+Return exec --no-startup-id $term
 # Update search indexes
 bindsym $mod+Shift+Return exec --no-startup-id updatedb -l 0 -o ~/.Archive.db -U /var/run/media/shaun/Archive && updatedb -l 0 -o ~/.home.db -U /home/shaun
 
-# kill focused window
-bindsym $mod+Shift+q kill
+# Kill focused window
 bindsym $mod+q kill
 
-# setup initial workspaces on displays
+# Setup initial workspaces on displays
 workspace "1" output eDP1
 workspace "2" output HDMI1
 workspace "3" output eDP1
@@ -125,10 +124,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
