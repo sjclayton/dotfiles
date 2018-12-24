@@ -34,6 +34,7 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'tweekmonster/startuptime.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
@@ -50,7 +51,6 @@ call plug#end()
 "}}}
 " Plugin Settings {{{
 
-
 " CtrlP
 let g:ctrlp_working_path_mode = 'ca'
 
@@ -64,6 +64,7 @@ let NERDTreeNaturalSort = 1
 
 "}}}
 " Interface Setup (Themes, colors, etc) {{{
+
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_powerline_fonts = 1
@@ -73,6 +74,7 @@ set background=dark
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_number_column='bg1'
 colorscheme gruvbox
+
 "}}}
 " Keymappings (Remappings... =) ) {{{
 
@@ -93,6 +95,9 @@ nmap k gk
 " Swap semi-colon and colon
 nnoremap ; :
 nnoremap : ;
+
+" Clear search matches
+noremap <silent><Leader><Space> :noh<cr>:call clearmatches()<cr>
 
 "" Utility mappings
 
