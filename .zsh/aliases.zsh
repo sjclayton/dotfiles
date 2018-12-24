@@ -15,8 +15,6 @@ alias zshrc="$EDITOR ~/.zshrc"
 alias vimcfg="$EDITOR ~/.config/nvim/init.vim"
 alias i3cfg="$EDITOR ~/.config/i3/config"
 alias polycfg="$EDITOR ~/.config/polybar/config"
-alias kittycfg="$EDITOR ~/.config/kitty/kitty.conf"
-alias rcfg="$EDITOR ~/.config/ranger/rc.conf"
 alias aliases="$EDITOR ~/.zsh/aliases.zsh"
 
 # Just for fun

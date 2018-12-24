@@ -29,7 +29,7 @@ tabtitle_preexec() {
 [[ -z $preexec_functions ]] && preexec_functions=()
 preexec_functions=($preexec_functions tabtitle_preexec)
 
-[[ -f $HOME/LS_COLORS ]] && eval "`dircolors -b $HOME/LS_COLORS`"
+[[ -f $HOME/.LS_COLORS ]] && eval "`dircolors -b $HOME/.LS_COLORS`"
 
 source $HOME/.zshrc.omz
 for config ($ZSH_SHAUN/**/*.zsh) source $config
