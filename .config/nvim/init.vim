@@ -19,6 +19,7 @@ endif
 
 set dictionary+=/usr/share/dict/words
 set laststatus=2
+set hidden
 set noshowmode
 set number relativenumber " Show line numbers
 set cursorline " Highlight current line
@@ -67,6 +68,7 @@ let NERDTreeNaturalSort = 1
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_powerline_fonts = 1
 " let g:airline_skip_empty_sections = 1
 
@@ -94,7 +96,6 @@ nmap k gk
 
 " Swap semi-colon and colon
 nnoremap ; :
-nnoremap : ;
 
 " Clear search matches
 noremap <silent><Leader><Space> :noh<cr>:call clearmatches()<cr>

@@ -29,9 +29,9 @@ tabtitle_preexec() {
 [[ -z $preexec_functions ]] && preexec_functions=()
 preexec_functions=($preexec_functions tabtitle_preexec)
 
-[[ -f ~/.dir_colors ]] && eval "`dircolors -b ~/.dir_colors`"
+[[ -f $HOME/LS_COLORS ]] && eval "`dircolors -b $HOME/LS_COLORS`"
 
-source ~/.zshrc.omz
+source $HOME/.zshrc.omz
 for config ($ZSH_SHAUN/**/*.zsh) source $config
 
 # Override auto-title when static titles are desired ($ title My new title)
@@ -61,8 +61,5 @@ man(){
     command man "$@"
 }
 
-# updateindex
-
 eval "$(fasd --init auto)"
-source ~/.zsh/shortcuts.zsh
 xset r rate 200 100
