@@ -12,12 +12,12 @@ let maplocalleader = ","
 if !has('gui')
 	let &t_8f = "[38;2;%lu;%lu;%lum"
 	let &t_8b = "[48;2;%lu;%lu;%lum"
-
 	let &t_ut = ''
 	set termguicolors
 endif
 
 set dictionary+=/usr/share/dict/words
+set shortmess+=I
 set laststatus=2
 set hidden
 set noshowmode
@@ -36,6 +36,7 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'tweekmonster/startuptime.vim'
+Plug 'mhinz/vim-startify'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
@@ -64,14 +65,30 @@ let NERDTreeShowHidden = 1
 let NERDTreeNaturalSort = 1
 
 "}}}
-" Interface Setup (Themes, colors, etc) {{{
+" Interface Settings {{{
 
+" Startify
+let g:startify_fortune_use_unicode = 1
+let g:startify_files_number = 5
+let g:startify_padding_left = 10
+function! StartifyEntryFormat()
+	return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
+endfunction
+function! s:filter_header(lines) abort
+	let longest_line   = max(map(copy(a:lines), 'strwidth(v:val)'))
+	let centered_lines = map(copy(a:lines), 'repeat(" ", (&columns / 2) - (longest_line / 2)) . v:val')
+	return centered_lines
+endfunction
+let g:startify_custom_header = s:filter_header(startify#fortune#cowsay())
+
+" Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_powerline_fonts = 1
 " let g:airline_skip_empty_sections = 1
 
+" Gruvbox
 set background=dark
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_number_column = 'bg1'
@@ -79,7 +96,7 @@ let g:gruvbox_italic = 1
 colorscheme gruvbox
 
 "}}}
-" Keymappings (Remappings... =) ) {{{
+" Keymappings {{{
 
 " Disable arrow keys
 map <Up> <Nop>
