@@ -145,10 +145,12 @@ bindsym $mod+r mode "resize"
 
 # Setup gaps
 #
-gaps inner 18
-#gaps outer 5
+gaps inner 10
+gaps outer 10
 smart_gaps on
 smart_borders on
+# Allow toggling of gaps on/off
+bindsym $mod+g exec --no-startup-id ~/scripts/toggle_gaps
 
 # Startup
 exec --no-startup-id compton --config ~/.config/compton.conf -b
