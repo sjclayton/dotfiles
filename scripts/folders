@@ -4,7 +4,10 @@ dc	~/Documents
 dl	~/Downloads
 P	~/Projects
 pp	~/Pictures
-pw	~/Pictures/Wallpapers
+wp	~/Pictures/Wallpapers
+wl	~/Pictures/Wallpapers/Landscapes
+ws	~/Pictures/Wallpapers/Space
+wt	~/Pictures/Wallpapers/Textures
 S	~/scripts
 C	~/.config
 xa	/run/media/shaun/Archive

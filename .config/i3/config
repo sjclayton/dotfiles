@@ -182,6 +182,9 @@ bindsym XF86Tools exec --no-startup-id $term nvim ~/.config/i3/config
 bindsym XF86MonBrightnessUp exec xbacklight + 5
 bindsym XF86MonBrightnessDown exec xbacklight - 5
 
+## Turn off screens
+bindsym $mod+Mod1+Delete exec --no-startup-id ~/scripts/screenoff.sh
+
 ## Audio controls
 # player controls
 bindsym $mod+backslash exec playerctl play-pause
