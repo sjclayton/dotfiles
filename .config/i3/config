@@ -23,6 +23,9 @@ bindsym $mod+Shift+Return exec --no-startup-id alacritty
 # Update search indexes
 bindsym $mod+Mod1+Return exec --no-startup-id updatedb -l 0 -o ~/.Archive.db -U /var/run/media/shaun/Archive && updatedb -l 0 -o ~/.home.db -U /home/shaun
 
+# Set focus to not follow mouse cursor
+focus_follows_mouse no
+
 # Kill focused window
 bindsym $mod+q kill
 
