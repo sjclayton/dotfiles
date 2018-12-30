@@ -3,7 +3,6 @@
 #
 
 # Helpers
-alias yao="yaourt"
 alias cfg="git --git-dir=$HOME/.cfg --work-tree=$HOME"
 alias ls="ls --color=tty --group-directories-first"
 alias sudo="nocorrect sudo -E "
