@@ -8,15 +8,13 @@
 ;=====================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #222
-background-alt = #666
-;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #555
-primary = #00ff00
-secondary = #4286F4
-alert = #bd2c40
+background = #282828
+background-alt = #1d2021
+foreground = #ebdbb2
+foreground-alt = #928374
+primary = #b8bb26
+secondary = #458588
+alert = #fb4934
 
 [bar/docked]
 monitor = ${env:MONITOR:eDP-1}
@@ -38,7 +36,7 @@ padding-right = 2
 
 module-margin = 1
 
-font-0 = Fira Mono:style=Bold:pixelsize=9:antialias=true;2
+font-0 = Fira Code:style=Retina:pixelsize=9:antialias=true;2
 font-1 = FuraMono Nerd Font:style=Regular:pixelsize=12:antialias=true;2
 
 modules-left = i3
@@ -70,7 +68,7 @@ padding-right = 2
 
 module-margin = 1
 
-font-0 = Fira Mono:style=Bold:pixelsize=9:antialias=true;2
+font-0 = Fira Code:style=Retina:pixelsize=9:antialias=true;2
 font-1 = FuraMono Nerd Font:style=Regular:pixelsize=12:antialias=true;1
 
 modules-left = i3
@@ -119,7 +117,7 @@ padding-right = 2
 
 module-margin = 1
 
-font-0 = Fira Mono:style=Bold:pixelsize=9:antialias=true;2
+font-0 = Fira Code:style=Retina:pixelsize=9:antialias=true;2
 font-1 = FuraMono Nerd Font:style=Regular:pixelsize=12:antialias=true;1
 
 modules-left = i3
@@ -177,7 +175,7 @@ interval = 25
 mount-0 = /home
 
 label-mounted = 﫭 %free%
-format-mounted-underline = #0074d9
+format-mounted-underline = #458588
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 format-unmounted-underline = ${self.format-mounted-underline}
@@ -280,14 +278,14 @@ card = intel_backlight
 type = internal/cpu
 interval = 3
 format-prefix = "龍"
-format-underline = #23cc40
+format-underline = #b8bb26
 label = %percentage:3%%
 
 [module/memory]
 type = internal/memory
 interval = 5
 format-prefix = ""
-format-underline = #ff4136
+format-underline = #fb4934
 label = %percentage_used:3%%
 
 [module/wlan]
@@ -408,18 +406,18 @@ warn-temperature = 65
 
 format = <label>
 format-prefix = "﨎 "
-format-underline = #ffdc00
+format-underline = #fabd2f
 format-warn-prefix = "﨎 "
 format-warn = <label-warn>
 format-warn-underline = ${self.format-underline}
 
 label = %temperature-c:2%
 label-warn = %temperature-c:2%
-label-warn-foreground = #ff4136
+label-warn-foreground = #fb4934
 
 [module/gmail]
 type = custom/script
-exec = ~/.config/polybar/gmail/launch.py --color '#ff4136' --prefix '' -ns
+exec = ~/.config/polybar/gmail/launch.py --color '#cc241d' --prefix '' -ns
 tail = true
 click-left = xdg-open https://mail.google.com
 
