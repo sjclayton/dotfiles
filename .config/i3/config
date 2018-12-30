@@ -194,7 +194,7 @@ for_window [class="Spotify"] move to workspace 9
 bindsym $mod+Ctrl+a exec --no-startup-id atom
 bindsym $mod+Ctrl+c exec --no-startup-id chromium
 bindsym $mod+Ctrl+s exec --no-startup-id spotify
-bindsym $mod+Ctrl+i exec --no-startup-id $term -e glances
+bindsym $mod+Ctrl+i exec --no-startup-id $term -e glances --disable-bg
 bindsym $mod+Shift+d --release exec ~/scripts/dunstreload.sh
 bindsym $mod+e exec --no-startup-id $term --title "ranger" ranger
 bindsym XF86MyComputer exec --no-startup-id $term --title "ranger" ranger
