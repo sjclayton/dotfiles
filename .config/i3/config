@@ -10,8 +10,25 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:Noto Sans 10
 
-# Color settings
-client.focused #555555 #222222 #dfdfdf #cccccc #777777
+# Color settings (gruvbox)
+
+set $bg #282828
+set $red #cc241d
+set $green #98971a
+set $blue #458588
+set $yellow #d79921
+set $magenta #b16286
+set $cyan #689d68
+set $white #ebdbb2
+set $black #1d2021
+
+# green gruvbox
+# class                 border|backgr|text|indicator|child_border
+client.focused          $green $green $black $magenta $green
+client.focused_inactive $bg $bg $yellow $magenta $black
+client.unfocused        $bg $bg $yellow $magenta $black
+client.urgent           $red $red $white $red $red
+
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -212,7 +229,7 @@ bindsym $mod+Shift+backslash exec amixer -q -D pulse sset Master toggle
 
 # Border settings
 hide_edge_borders smart_no_gaps
-default_border pixel 1
+default_border pixel 2
 
 ## Window rules
 #
