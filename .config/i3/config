@@ -46,17 +46,17 @@ focus_follows_mouse no
 # Kill focused window
 bindsym $mod+q kill
 
-# # Setup initial workspaces on displays
-# workspace "1" output eDP1
-# workspace "2" output HDMI1
-# workspace "3" output eDP1
-# workspace "4" output HDMI1
-# workspace "5" output eDP1
-# workspace "6" output HDMI1
-# workspace "7" output eDP1
-# workspace "8" output HDMI1
-# workspace "9" output eDP1
-# workspace "10" output HDMI1
+# Setup initial workspaces on displays
+workspace "1" output eDP1
+workspace "2" output HDMI1
+workspace "3" output eDP1
+workspace "4" output HDMI1
+workspace "5" output eDP1
+workspace "6" output HDMI1
+workspace "7" output eDP1
+workspace "8" output HDMI1
+workspace "9" output eDP1
+workspace "10" output HDMI1
 
 # change focus
 bindsym $mod+h focus left
