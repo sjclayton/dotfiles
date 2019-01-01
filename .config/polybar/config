@@ -37,7 +37,7 @@ padding-right = 1
 module-margin = 1
 
 font-0 = Fira Code:style=Retina:pixelsize=10:antialias=true;1
-font-1 = FuraMono Nerd Font:style=Regular:pixelsize=12:antialias=true;1
+font-1 = FuraMono Nerd Font:style=Regular:pixelsize=12:antialias=true;3
 
 modules-left = i3
 modules-center =
@@ -118,7 +118,7 @@ padding-right = 1
 module-margin = 1
 
 font-0 = Fira Code:style=Retina:pixelsize=10:antialias=true;1
-font-1 = FuraMono Nerd Font:style=Regular:pixelsize=12:antialias=true;1
+font-1 = FuraMono Nerd Font:style=Regular:pixelsize=12:antialias=true;3
 
 modules-left = i3
 modules-center =
@@ -204,17 +204,17 @@ enable-scroll = false
 pin-workspaces = true
 
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;
-ws-icon-8 = 9;阮
-ws-icon-9 = 10;
-ws-icon-default = 
+; ws-icon-0 = 1;1
+; ws-icon-1 = 2;2
+; ws-icon-2 = 3;3
+; ws-icon-3 = 4;4
+; ws-icon-4 = 5;5
+; ws-icon-5 = 6;6
+; ws-icon-6 = 7;7
+; ws-icon-7 = 8;8
+; ws-icon-8 = 9;9
+; ws-icon-9 = 10;10
+; ws-icon-default =  
 
 label-mode = %mode%
 label-mode-padding = 2
@@ -222,23 +222,23 @@ label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %icon%
+label-focused = %name%
 label-focused-background = ${module/bspwm.label-focused-background}
 label-focused-underline = ${module/bspwm.label-focused-underline}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %icon%
+label-unfocused = %name%
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %icon%
+label-visible = %name%
 ;label-visible-background = #444
 label-visible-underline = ${colors.secondary}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %icon%
+label-urgent = %name%
 label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
