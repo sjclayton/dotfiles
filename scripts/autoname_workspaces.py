@@ -51,11 +51,12 @@ WINDOW_ICONS = {
     'alacritty': fa.icons['terminal'],
     'kitty': fa.icons['terminal'],
     'feh': fa.icons['image'],
+    'zathura': fa.icons['book'],
     'chromium': fa.icons['chrome'],
     'vim': fa.icons['edit'],
     'smplayer': fa.icons['play'],
-    'spotify': fa.icons['music'],  # could also use the 'spotify' icon
-    'steam': fa.icons['steam'],
+    'spotify': fa.icons['spotify'],  # could also use the 'spotify' icon
+    'pavucontrol': fa.icons['volume-up'],
     'ranger': fa.icons['folder'],
     'glances': fa.icons['chart-area'],
 }
