@@ -72,7 +72,7 @@ font-0 = Fira Code:style=Retina:pixelsize=10:antialias=true;1
 font-1 = FuraMono Nerd Font:style=Regular:pixelsize=12:antialias=true;1
 
 modules-left = i3
-modules-center = xwindow
+modules-center =
 modules-right = filesystem cpu memory temperature battery xbacklight gmail pulseaudio customdate
 
 tray-position = right
@@ -121,7 +121,7 @@ font-0 = Fira Code:style=Retina:pixelsize=10:antialias=true;1
 font-1 = FuraMono Nerd Font:style=Regular:pixelsize=12:antialias=true;1
 
 modules-left = i3
-modules-center = xwindow
+modules-center =
 modules-right = filesystem cpu memory temperature gmail pulseaudio customdate
 
 tray-position = right

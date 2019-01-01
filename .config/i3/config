@@ -92,7 +92,10 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 # bindsym $mod+s layout stacking
 # bindsym $mod+w layout tabbed
-bindsym $mod+d layout toggle split
+bindsym $mod+s layout toggle split
+
+# focus last used window (container)
+bindsym $mod+d exec --no-startup-id ~/scripts/focus_last.py --switch
 
 # toggle tiling / floating
 #bindsym $mod+Shift+space floating toggle
@@ -178,6 +181,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 exec --no-startup-id ckb-next -c -b
 exec --no-startup-id udiskie -2 -N
+exec --no-startup-id ~/scripts/focus_last.py
 exec_always --no-startup-id nitrogen --restore && sleep 2
 exec_always --no-startup-id ~/scripts/polylaunch.sh
 exec --no-startup-id kupfer --no-splash
