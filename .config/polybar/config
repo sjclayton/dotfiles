@@ -157,13 +157,6 @@ exec = ~/scripts/spotify.py
 exec-if = pgrep -x spotify
 interval = 5
 
-[module/weather]
-type = custom/script
-exec = ~/scripts/weather.py -f -a '43.3719,-80.9837' -k 17e3b70f6de51d841024411267583019
-interval = 300
-label = %output%
-label-font = 3
-
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
@@ -205,6 +198,7 @@ type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
+enable-scroll = false
 
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
