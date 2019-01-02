@@ -55,8 +55,9 @@ WINDOW_ICONS = {
     'chromium': fa.icons['chrome'],
     'vim': fa.icons['edit'],
     'smplayer': fa.icons['play'],
-    'spotify': fa.icons['spotify'],  # could also use the 'spotify' icon
+    'spotify': fa.icons['music'],  # could also use the 'spotify' icon
     'pavucontrol': fa.icons['volume-up'],
+    'qbittorrent': fa.icons['download'],
     'ranger': fa.icons['folder'],
     'glances': fa.icons['chart-area'],
 }

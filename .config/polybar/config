@@ -396,7 +396,7 @@ animation-charging-framerate = 750
 type = internal/temperature
 interval = 3
 thermal-zone = 0
-warn-temperature = 65
+warn-temperature = 70
 
 format = <label>
 format-prefix = "﨎 "
