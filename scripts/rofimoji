@@ -73,7 +73,7 @@ function download() {
 
 function display() {
     emoji=$(cat "$EMOJI_FILE" | grep -v '#' | grep -v '^[[:space:]]*$')
-    line=$(echo "$emoji" | rofi -dmenu -i -sort -levenshtein-sort -matching fuzzy -p Emoji -theme gruvbox-dark-hard -kb-custom-1 Alt+c $@)
+    line=$(echo "$emoji" | rofi -dmenu -i -sort -levenshtein-sort -matching fuzzy -p Emoji -kb-custom-1 Alt+c $@)
     exit_code=$?
 
     line=($line)
