@@ -49,17 +49,19 @@ from util import *
 # then click on the application you want to inspect.
 WINDOW_ICONS = {
     'alacritty': fa.icons['terminal'],
-    'kitty': fa.icons['terminal'],
+    'kitty': '',
     'feh': fa.icons['image'],
-    'zathura': fa.icons['book'],
+    'zathura': '龎',
     'chromium': fa.icons['chrome'],
-    'vim': fa.icons['edit'],
     'smplayer': fa.icons['play'],
+    'vlc': '嗢',
     'spotify': fa.icons['music'],  # could also use the 'spotify' icon
-    'pavucontrol': fa.icons['volume-up'],
     'qbittorrent': fa.icons['download'],
-    'ranger': fa.icons['folder'],
+    'ranger': fa.icons['folder-open'],
+    'pavucontrol': '蓼',
+    'ckb-next': '',
     'glances': fa.icons['chart-area'],
+    'vim': '',
 }
 
 # This icon is used for any application not in the list above
