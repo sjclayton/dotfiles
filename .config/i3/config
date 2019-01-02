@@ -65,22 +65,22 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+Left exec --no-startup-id i3viswiz l
+bindsym $mod+Down exec --no-startup-id i3viswiz d
+bindsym $mod+Up exec --no-startup-id i3viswiz u
+bindsym $mod+Right exec --no-startup-id i3viswiz r
 
 # move focused window
-bindsym $mod+Shift+h exec --no-startup-id i3viswiz l
-bindsym $mod+Shift+j exec --no-startup-id i3viswiz d
-bindsym $mod+Shift+k exec --no-startup-id i3viswiz u
-bindsym $mod+Shift+l exec --no-startup-id i3viswiz r
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left exec --no-startup-id i3viswiz l
-bindsym $mod+Shift+Down exec --no-startup-id i3viswiz d
-bindsym $mod+Shift+Up exec --no-startup-id i3viswiz u
-bindsym $mod+Shift+Right exec --no-startup-id i3viswiz r
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
 # Set direction for new window splits
 bindsym $mod+Shift+v split h
@@ -200,7 +200,9 @@ bindsym $mod+Ctrl+v exec --no-startup-id $term --name "vim" nvim
 bindsym $mod+Ctrl+c exec --no-startup-id chromium
 bindsym $mod+Ctrl+s exec --no-startup-id spotify
 bindsym $mod+Ctrl+i exec --no-startup-id $term --name "glances" glances --disable-bg
-bindsym $mod+Shift+d --release exec ~/scripts/dunstreload.sh
+bindsym $mod+Mod1+d --release exec ~/scripts/dunstreload.sh
+bindsym $mod+Mod1+l exec --no-startup-id ~/scripts/i3-layout-manager/layout_manager.sh
+bindsym $mod+question exec --no-startup-id ~/scripts/rofimoji
 bindsym $mod+e exec --no-startup-id $term --name "ranger" ranger
 bindsym XF86MyComputer exec --no-startup-id $term --name "ranger" ranger
 bindsym XF86Tools exec --no-startup-id $term --name "vim" nvim ~/.config/i3/config
