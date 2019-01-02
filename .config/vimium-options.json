@@ -1,0 +1,26 @@
+{
+  "settingsVersion": "1.64.3",
+  "exclusionRules": [
+    {
+      "pattern": "https?://mail.google.com/*",
+      "passKeys": ""
+    }
+  ],
+  "filterLinkHints": false,
+  "waitForEnterForFilteredHints": true,
+  "hideHud": false,
+  "keyMappings": "map R reload hard",
+  "linkHintCharacters": "sadfjklewcmpgh",
+  "linkHintNumbers": "0123456789",
+  "newTabUrl": "pages/blank.html",
+  "nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
+  "previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
+  "regexFindMode": false,
+  "ignoreKeyboardLayout": false,
+  "scrollStepSize": 120,
+  "smoothScroll": true,
+  "grabBackFocus": false,
+  "searchEngines": "w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\n\n# More examples.\n#\n# (Vimium supports search completion Wikipedia, as\n# above, and for these.)\n#\n# g: https://www.google.com/search?q=%s Google\n# l: https://www.google.com/search?q=%s&btnI I'm feeling lucky...\n# y: https://www.youtube.com/results?search_query=%s Youtube\n# gm: https://www.google.com/maps?q=%s Google maps\n# b: https://www.bing.com/search?q=%s Bing\n# d: https://duckduckgo.com/?q=%s DuckDuckGo\n# az: https://www.amazon.com/s/?field-keywords=%s Amazon\n# qw: https://www.qwant.com/?q=%s Qwant",
+  "searchUrl": "https://www.google.com/search?q=",
+  "userDefinedLinkHintCss": "/* Vomnibar Gruvbox CSS */\n\n#vomnibar ol, #vomnibar ul {\n  list-style: none;\n  display: none;\n}\n\n#vomnibar {\n  display: block;\n  position: fixed;\n  width: calc(100% - 20px); /* adjusted to keep border radius and box-shadow visible*/\n  /*min-width: 400px;\n  top: 70px;\n  left: 50%;*/\n  top: 8px;\n  left: 8px;\n  /*margin: 0 0 0 -40%;*/\n  font-family: sans-serif;\n  background-color: #1d2021;\n  text-align: left;\n  border: 2px solid #ebdbb2;\n  border-radius: 0px;\n  z-index: 2139999999; /* One less than hint markers and the help dialog (see ../content_scripts/vimium.css). */\n}\n\n#vomnibar input {\n  color: #ebdbb2;\n  font-family: 'Noto Sans', sans-serif;\n  font-size: 14px;\n  height: 34px;\n  margin-bottom: 0;\n  padding: 4px;\n  background-color: #282828;\n  border: 1px solid #ebdbb2;\n  border-radius: 0px;\n  width: 100%;\n  outline: none;\n  box-sizing: border-box;\n}\n\n#vomnibar .vomnibarSearchArea {\n  display: block;\n  padding: 10px;\n  background-color: #1d2021;\n  border-bottom: 1px solid #1d2021;\n}\n\n#vomnibar ul {\n  background-color: #1d2021;\n  list-style: none;\n  padding: 10px 0;\n  padding-top: 0;\n}\n\n#vomnibar li {\n  border-bottom: 1px solid #282828;\n  line-height: 1.1em;\n  padding: 7px 10px;\n  font-size: 14px;\n  color: #ebdbb2;\n  position: relative;\n  display: list-item;\n  margin: auto;\n}\n\n#vomnibar li:last-of-type {\n  border-bottom: none;\n}\n\n#vomnibar li .vomnibarTopHalf, #vomnibar li .vomnibarBottomHalf {\n  display: block;\n  overflow: hidden;\n}\n\n#vomnibar li .vomnibarBottomHalf {\n  font-size: 15px;\n  margin-top: 3px;\n  padding: 2px 0;\n}\n\n#vomnibar li .vomnibarIcon {\n  background-position-y: center;\n  background-size: 16px;\n  background-repeat: no-repeat;\n  padding-left: 20px;\n}\n\n#vomnibar li .vomnibarSource {\n  color: #fabd2f;\n  margin-right: 4px;\n}\n#vomnibar li .vomnibarRelevancy {\n  position: absolute;\n  right: 0;\n  top: 0;\n  padding: 5px;\n  background-color: #797979;\n  color: white;\n  font-family: monospace;\n  width: 100px;\n  overflow: hidden;\n}\n\n#vomnibar li .vomnibarUrl {\n  white-space: nowrap;\n  color: #458588;\n}\n\n#vomnibar li .vomnibarMatch {\n  font-weight: bold;\n  color: #83a598;\n}\n\n#vomnibar li em, #vomnibar li .vomnibarTitle {\n  color: #a89984;\n  margin-left: 4px;\n  font-weight: normal;\n}\n#vomnibar li em { font-style: italic; }\n#vomnibar li em .vomnibarMatch, #vomnibar li .vomnibarTitle .vomnibarMatch {\n  color: #ebdbb2;\n}\n\n#vomnibar li.vomnibarSelected {\n  background-color: #282828;\n  font-weight: normal;\n}\n\n#vomnibarInput::selection {\n  background-color: #a89984;\n}\n\n.vomnibarInsertText {\n}\n\n.vomnibarNoInsertText {\n  visibility: hidden;\n}\n\ndiv > .vimiumHintMarker {\n  padding: 3px 4px;\n  background-color: #1d2021;\n  border: 1px solid #ebdbb2;\n  border-radius: 0px;\n  background-image: none;\n}\n\ndiv > .vimiumHintMarker span {\n  font-size: 12px;\n  font-weight: bold;\n  text-shadow: none;\n  color: #ebdbb2;\n  background-color: #1d2021;\n}\n\ndiv > .vimiumHintMarker > .matchingCharacter {\n  color: #a89984;\n}"
+}
