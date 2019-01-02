@@ -37,7 +37,7 @@ padding-right = 1
 module-margin = 1
 
 font-0 = Fira Code:style=Retina:pixelsize=10:antialias=true;1
-font-1 = FuraMono Nerd Font:style=Regular:pixelsize=12:antialias=true;3
+font-1 = FuraMono Nerd Font:style=Regular:pixelsize=12:antialias=true;2
 
 modules-left = i3
 modules-center =
@@ -69,7 +69,7 @@ padding-right = 1
 module-margin = 1
 
 font-0 = Fira Code:style=Retina:pixelsize=10:antialias=true;1
-font-1 = FuraMono Nerd Font:style=Regular:pixelsize=12:antialias=true;1
+font-1 = FuraMono Nerd Font:style=Regular:pixelsize=12:antialias=true;2
 
 modules-left = i3
 modules-center =
@@ -118,7 +118,7 @@ padding-right = 1
 module-margin = 1
 
 font-0 = Fira Code:style=Retina:pixelsize=10:antialias=true;1
-font-1 = FuraMono Nerd Font:style=Regular:pixelsize=12:antialias=true;3
+font-1 = FuraMono Nerd Font:style=Regular:pixelsize=12:antialias=true;2
 
 modules-left = i3
 modules-center =
