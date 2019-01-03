@@ -51,6 +51,7 @@ WINDOW_ICONS = {
     'alacritty': fa.icons['terminal'],
     'kitty': '',
     'feh': fa.icons['image'],
+    'gimp-2.10': '',
     'zathura': '龎',
     'chromium': fa.icons['chrome'],
     'smplayer': fa.icons['play'],

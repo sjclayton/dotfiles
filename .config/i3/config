@@ -59,15 +59,15 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # Set direction for new window splits
-bindsym $mod+Shift+v split v; exec notify-send "Vertical Split"
-bindsym $mod+v split h; exec notify-send "Horizontal Split"
+bindsym $mod+Shift+v split v; exec dunstify -r 99 "Vertical split"
+bindsym $mod+v split h; exec dunstify -r 99 "Horizontal split"
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # change container layout (tabbed, toggle split)
-bindsym $mod+t layout tabbed
-bindsym $mod+s layout toggle split
+bindsym $mod+t layout tabbed; exec dunstify -r 98 "Tabbed mode"
+bindsym $mod+s layout toggle split; exec dunstify -r 99 "Toggle split direction"
 
 # focus last used window (container)
 bindsym $mod+d exec --no-startup-id ~/scripts/focus_last.py --switch
@@ -172,6 +172,7 @@ bindsym $mod+x exec --no-startup-id ~/scripts/polylaunch.sh
 # General
 for_window [class="Kupfer.py" instance="kupfer.py"] floating enable
 for_window [class="Nm-connection-editor" instance="nm-connection-editor"] floating enable
+for_window [title="Task Manager - Chromium"] floating enable, move position center
 for_window [class="Spotify"] move to workspace 10
 # Dropdown Terminal
 for_window [instance="dropdown"] floating enable
@@ -188,7 +189,7 @@ bindsym $mod+Ctrl+i exec --no-startup-id $term --name "glances" glances --disabl
 bindsym $mod+Mod1+d --release exec ~/scripts/dunstreload.sh
 bindsym $mod+Mod1+l exec --no-startup-id ~/scripts/i3-layout-manager/layout_manager.sh
 bindsym $mod+question exec --no-startup-id ~/scripts/rofimoji
-bindsym $mod+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
+bindsym $mod+u [instance="dropdown"] scratchpad show, move position center
 bindsym $mod+e exec --no-startup-id $term --name "ranger" ranger
 bindsym XF86MyComputer exec --no-startup-id $term --name "ranger" ranger
 bindsym XF86Tools exec --no-startup-id $term --name "vim" nvim ~/.config/i3/config
