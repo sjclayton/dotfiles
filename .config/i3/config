@@ -84,9 +84,6 @@ bindsym $mod+s layout toggle split
 # focus last used window (container)
 bindsym $mod+d exec --no-startup-id ~/scripts/focus_last.py --switch
 
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
@@ -182,14 +179,22 @@ exec_always --no-startup-id ~/scripts/polylaunch.sh
 exec_always --no-startup-id ~/scripts/autoname_workspaces.py &
 exec --no-startup-id kupfer --no-splash
 exec --no-startup-id unclutter -b --exclude-root
+exec --no-startup-id $term --name "dropdown"
 
 # Monitor switch keybinding (reload bars)
 bindsym $mod+x exec --no-startup-id ~/scripts/polylaunch.sh
 
-# Window rules
+## Window rules
+# General
 for_window [class="Kupfer.py" instance="kupfer.py"] floating enable
 for_window [class="Nm-connection-editor" instance="nm-connection-editor"] floating enable
 for_window [class="Spotify"] move to workspace 10
+# Dropdown Terminal
+for_window [instance="dropdown"] floating enable
+for_window [instance="dropdown"] resize set width 960 px height 540 px
+for_window [instance="dropdown"] move scratchpad
+for_window [instance="dropdown"] border pixel 4
+for_window [instance="dropdown"] sticky enable
 
 # Application launch key bindings
 bindsym $mod+Ctrl+v exec --no-startup-id $term --name "vim" nvim
@@ -199,6 +204,7 @@ bindsym $mod+Ctrl+i exec --no-startup-id $term --name "glances" glances --disabl
 bindsym $mod+Mod1+d --release exec ~/scripts/dunstreload.sh
 bindsym $mod+Mod1+l exec --no-startup-id ~/scripts/i3-layout-manager/layout_manager.sh
 bindsym $mod+question exec --no-startup-id ~/scripts/rofimoji
+bindsym $mod+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 bindsym $mod+e exec --no-startup-id $term --name "ranger" ranger
 bindsym XF86MyComputer exec --no-startup-id $term --name "ranger" ranger
 bindsym XF86Tools exec --no-startup-id $term --name "vim" nvim ~/.config/i3/config
