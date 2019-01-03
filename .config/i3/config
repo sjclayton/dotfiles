@@ -64,23 +64,11 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left exec --no-startup-id i3viswiz l
-bindsym $mod+Down exec --no-startup-id i3viswiz d
-bindsym $mod+Up exec --no-startup-id i3viswiz u
-bindsym $mod+Right exec --no-startup-id i3viswiz r
-
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
 # Set direction for new window splits
 bindsym $mod+Shift+v split h
@@ -89,9 +77,8 @@ bindsym $mod+v split v
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
-# bindsym $mod+s layout stacking
-# bindsym $mod+w layout tabbed
+# change container layout (tabbed, toggle split)
+bindsym $mod+t layout tabbed
 bindsym $mod+s layout toggle split
 
 # focus last used window (container)
@@ -104,10 +91,18 @@ bindsym $mod+d exec --no-startup-id ~/scripts/focus_last.py --switch
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+p focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+c focus child
+
+# switch to next/previous workspace
+bindsym $mod+Left workspace prev
+bindsym $mod+Right workspace next
+
+# switch to next/previous workspace on monitor
+bindsym $mod+Shift+Left workspace prev_on_output
+bindsym $mod+Shift+Right workspace next_on_output
 
 # switch to workspace
 bindsym $mod+1 workspace number 1
