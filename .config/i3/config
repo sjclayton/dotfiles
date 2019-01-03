@@ -85,7 +85,7 @@ bindsym $mod+s layout toggle split
 bindsym $mod+d exec --no-startup-id ~/scripts/focus_last.py --switch
 
 # toggle tiling / floating
-#bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -186,8 +186,9 @@ exec --no-startup-id unclutter -b --exclude-root
 # Monitor switch keybinding (reload bars)
 bindsym $mod+x exec --no-startup-id ~/scripts/polylaunch.sh
 
-# Application workspace assignments, etc
-
+# Window rules
+for_window [class="Kupfer.py" instance="kupfer.py"] floating enable
+for_window [class="Nm-connection-editor" instance="nm-connection-editor"] floating enable
 for_window [class="Spotify"] move to workspace 10
 
 # Application launch key bindings
@@ -232,6 +233,3 @@ bindsym $mod+Shift+backslash exec amixer -q -D pulse sset Master toggle
 # Border settings
 hide_edge_borders smart_no_gaps
 default_border pixel 2
-
-## Window rules
-#
