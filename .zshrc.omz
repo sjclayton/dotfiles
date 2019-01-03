@@ -10,13 +10,14 @@ export ZSH=/home/shaun/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
 ZLE_RPROMPT_INDENT=0
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir_writable dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator time)
-#POWERLEVEL9K_MODE='nerdfont-complete'
-POWERLEVEL9K_MODE='awesome-fontconfig'
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator dir_writable dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs time)
+POWERLEVEL9K_TIME_FORMAT="%D{%_I:%M%p}"
+POWERLEVEL9K_STATUS_ERROR_BACKGROUND='maroon'
+POWERLEVEL9K_STATUS_ERROR_FOREGROUND='olive'
+POWERLEVEL9K_MODE='nerdfont-complete'
+# POWERLEVEL9K_MODE='awesome-fontconfig'
 ZSH_THEME="powerlevel9k/powerlevel9k"
-
-#ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="false"
@@ -60,7 +61,7 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(archlinux zsh-syntax-highlighting-filetypes zsh-autosuggestions)
+plugins=(extract archlinux zsh-syntax-highlighting-filetypes zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 

@@ -55,6 +55,7 @@ call plug#end()
 
 " CtrlP
 let g:ctrlp_working_path_mode = 'ca'
+let g:ctrlp_cmd = 'CtrlPMRU'
 
 " NERDTree
 autocmd StdinReadPre * let s:std_in=1
