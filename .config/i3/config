@@ -2,9 +2,11 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-# Basic definitions
+# Basic variable definitions
 set $term kitty
 set $mod Mod4
+set $exec exec --no-startup-id
+set $exec_a exec_always --no-startup-id
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -34,11 +36,11 @@ client.urgent           $red $red $white $red $red
 floating_modifier $mod
 
 # Start a terminal
-bindsym $mod+Return exec --no-startup-id $term
-bindsym $mod+Shift+Return exec --no-startup-id alacritty
+bindsym $mod+Return $exec $term
+bindsym $mod+Shift+Return $exec alacritty
 
 # Update search indexes
-bindsym $mod+Mod1+Return exec --no-startup-id updatedb -l 0 -o ~/.Archive.db -U /var/run/media/shaun/Archive && updatedb -l 0 -o ~/.home.db -U /home/shaun
+bindsym $mod+Mod1+Return $exec updatedb -l 0 -o ~/.Archive.db -U /var/run/media/shaun/Archive && updatedb -l 0 -o ~/.home.db -U /home/shaun
 
 # Set focus to not follow mouse cursor
 focus_follows_mouse no
@@ -59,18 +61,18 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # Set direction for new window splits
-bindsym $mod+Shift+v split v; exec dunstify -r 99 "Vertical split"
-bindsym $mod+v split h; exec dunstify -r 99 "Horizontal split"
+bindsym $mod+Shift+v split v; $exec dunstify -r 99 "Vertical split"
+bindsym $mod+v split h; $exec dunstify -r 99 "Horizontal split"
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # change container layout (tabbed, toggle split)
-bindsym $mod+t layout tabbed; exec dunstify -r 98 "Tabbed mode"
-bindsym $mod+s layout toggle split; exec dunstify -r 99 "Toggle split direction"
+bindsym $mod+t layout tabbed; $exec dunstify -r 98 "Tabbed mode"
+bindsym $mod+s layout toggle split; $exec dunstify -r 99 "Toggle split direction"
 
 # focus last used window (container)
-bindsym $mod+d exec --no-startup-id ~/scripts/focus_last.py --switch
+bindsym $mod+d $exec ~/scripts/focus_last.py --switch
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -122,7 +124,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+x restart
 # exit i3 (pass control to xfce session manager)
-bindsym $mod+Shift+e exec i3-msg exit
+bindsym $mod+Shift+e $exec i3-msg exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -149,24 +151,24 @@ gaps outer 10
 smart_gaps on
 smart_borders on
 # Allow toggling of gaps on/off
-bindsym $mod+g exec --no-startup-id ~/scripts/toggle_gaps
+bindsym $mod+g $exec ~/scripts/toggle_gaps
 
 # Startup
-exec --no-startup-id compton --config ~/.config/compton.conf -b
-exec --no-startup-id nm-applet
-exec --no-startup-id dunst
-exec --no-startup-id ckb-next -c -b
-exec --no-startup-id udiskie -2 -N
-exec_always --no-startup-id ~/scripts/focus_last.py
-exec_always --no-startup-id nitrogen --restore && sleep 2
-exec_always --no-startup-id ~/scripts/polylaunch.sh
-exec_always --no-startup-id ~/scripts/autoname_workspaces.py &
-exec --no-startup-id kupfer --no-splash
-exec --no-startup-id unclutter -b --exclude-root
-exec --no-startup-id $term --name "dropdown"
+$exec compton --config ~/.config/compton.conf -b
+$exec nm-applet
+$exec dunst
+$exec ckb-next -c -b
+$exec udiskie -2 -N
+$exec_a ~/scripts/focus_last.py
+$exec_a nitrogen --restore && sleep 2
+$exec_a ~/scripts/polylaunch.sh
+$exec_a ~/scripts/autoname_workspaces.py &
+$exec kupfer --no-splash
+$exec unclutter -b --exclude-root
+$exec $term --name "dropdown"
 
 # Monitor switch keybinding (reload bars)
-bindsym $mod+x exec --no-startup-id ~/scripts/polylaunch.sh
+bindsym $mod+x $exec ~/scripts/polylaunch.sh
 
 ## Window rules
 # General
@@ -182,44 +184,44 @@ for_window [instance="dropdown"] border pixel 3
 for_window [instance="dropdown"] sticky enable
 
 # Application launch key bindings
-bindsym $mod+Ctrl+v exec --no-startup-id $term --name "vim" nvim
-bindsym $mod+Ctrl+c exec --no-startup-id chromium
-bindsym $mod+Ctrl+s exec --no-startup-id spotify
-bindsym $mod+Ctrl+i exec --no-startup-id $term --name "glances" glances --disable-bg
-bindsym $mod+Mod1+d --release exec ~/scripts/dunstreload.sh
-bindsym $mod+Mod1+l exec --no-startup-id ~/scripts/i3-layout-manager/layout_manager.sh
-bindsym $mod+question exec --no-startup-id ~/scripts/rofimoji
+bindsym $mod+Ctrl+v $exec $term --name "vim" nvim
+bindsym $mod+Ctrl+c $exec chromium
+bindsym $mod+Ctrl+s $exec spotify
+bindsym $mod+Ctrl+i $exec $term --name "glances" glances --disable-bg
+bindsym $mod+Mod1+d --release $exec ~/scripts/dunstreload.sh
+bindsym $mod+Mod1+l $exec ~/scripts/i3-layout-manager/layout_manager.sh
+bindsym $mod+question $exec ~/scripts/rofimoji
 bindsym $mod+u [instance="dropdown"] scratchpad show, move position center
-bindsym $mod+e exec --no-startup-id $term --name "ranger" ranger
-bindsym XF86MyComputer exec --no-startup-id $term --name "ranger" ranger
-bindsym XF86Tools exec --no-startup-id $term --name "vim" nvim ~/.config/i3/config
+bindsym $mod+e $exec $term --name "ranger" ranger
+bindsym XF86MyComputer $exec $term --name "ranger" ranger
+bindsym XF86Tools $exec $term --name "vim" nvim ~/.config/i3/config
 
 ## Screen brightness
-bindsym XF86MonBrightnessUp exec xbacklight + 5
-bindsym XF86MonBrightnessDown exec xbacklight - 5
+bindsym XF86MonBrightnessUp $exec xbacklight + 5
+bindsym XF86MonBrightnessDown $exec xbacklight - 5
 
 ## Turn off screens
-bindsym $mod+Mod1+Delete exec --no-startup-id ~/scripts/screenoff.sh
+bindsym $mod+Mod1+Delete $exec ~/scripts/screenoff.sh
 
 ## Audio controls
 # player controls
-bindsym $mod+backslash exec playerctl play-pause
-bindsym $mod+bracketright exec playerctl next
-bindsym $mod+bracketleft exec playerctl previous
+bindsym $mod+backslash $exec playerctl play-pause
+bindsym $mod+bracketright $exec playerctl next
+bindsym $mod+bracketleft $exec playerctl previous
 
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioStop exec playerctl stop
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay $exec playerctl play-pause
+bindsym XF86AudioStop $exec playerctl stop
+bindsym XF86AudioNext $exec playerctl next
+bindsym XF86AudioPrev $exec playerctl previous
 
 # change volume or toggle mute
-bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+
-bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%-
-bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle
+bindsym XF86AudioRaiseVolume $exec amixer -q -D pulse sset Master 5%+
+bindsym XF86AudioLowerVolume $exec amixer -q -D pulse sset Master 5%-
+bindsym XF86AudioMute $exec amixer -q -D pulse sset Master toggle
 
-bindsym $mod+equal exec amixer -q -D pulse sset Master 5%+
-bindsym $mod+minus exec amixer -q -D pulse sset Master 5%-
-bindsym $mod+Shift+backslash exec amixer -q -D pulse sset Master toggle
+bindsym $mod+equal $exec amixer -q -D pulse sset Master 5%+
+bindsym $mod+minus $exec amixer -q -D pulse sset Master 5%-
+bindsym $mod+Shift+backslash $exec amixer -q -D pulse sset Master toggle
 
 # Border settings
 hide_edge_borders smart_no_gaps
