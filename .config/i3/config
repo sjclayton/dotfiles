@@ -46,18 +46,6 @@ focus_follows_mouse no
 # Kill focused window
 bindsym $mod+q kill
 
-# Setup initial workspaces on displays
-workspace "1" output eDP1
-workspace "2" output eDP1
-workspace "3" output eDP1
-workspace "4" output eDP1
-workspace "5" output eDP1
-workspace "6" output HDMI1
-workspace "7" output HDMI1
-workspace "8" output HDMI1
-workspace "9" output HDMI1
-workspace "10" output HDMI1
-
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -71,8 +59,8 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # Set direction for new window splits
-bindsym $mod+Shift+v split h
-bindsym $mod+v split v
+bindsym $mod+Shift+v split v; exec notify-send "Vertical Split"
+bindsym $mod+v split h; exec notify-send "Horizontal Split"
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -100,6 +88,10 @@ bindsym $mod+Right workspace next
 # switch to next/previous workspace on monitor
 bindsym $mod+Shift+Left workspace prev_on_output
 bindsym $mod+Shift+Right workspace next_on_output
+
+# move workspace to next/previous monitor
+bindsym $mod+Mod1+Left move workspace to output left
+bindsym $mod+Mod1+Right move workspace to output right
 
 # switch to workspace
 bindsym $mod+1 workspace number 1
@@ -134,24 +126,16 @@ bindsym $mod+Shift+e exec i3-msg exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Down resize shrink height 10 px or 10 ppt
+        bindsym Up resize grow height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
@@ -193,7 +177,7 @@ for_window [class="Spotify"] move to workspace 10
 for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set width 960 px height 540 px
 for_window [instance="dropdown"] move scratchpad
-for_window [instance="dropdown"] border pixel 4
+for_window [instance="dropdown"] border pixel 3
 for_window [instance="dropdown"] sticky enable
 
 # Application launch key bindings

@@ -55,7 +55,7 @@ WINDOW_ICONS = {
     'chromium': fa.icons['chrome'],
     'smplayer': fa.icons['play'],
     'vlc': '嗢',
-    'spotify': fa.icons['music'],  # could also use the 'spotify' icon
+    'spotify': fa.icons['music'],
     'qbittorrent': fa.icons['download'],
     'ranger': fa.icons['folder-open'],
     'pavucontrol': '蓼',
