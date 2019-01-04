@@ -107,17 +107,17 @@ def rename_workspaces(i3):
 
         # As we enumerate, leave one gap in workspace numbers between each monitor.
         # This leaves a space to insert a new one later.
-        if ws_info.output != prev_output and prev_output != None:
-            n += 1
+        # if ws_info.output != prev_output and prev_output != None:
+            # n += 1
         prev_output = ws_info.output
 
         # renumber workspace
-        new_num = n
+        # new_num = n
         n += 1
 
         new_name = construct_workspace_name(
             NameParts(
-                num=new_num, shortname=name_parts.shortname, icons=new_icons))
+                num=name_parts.num, shortname=name_parts.shortname, icons=new_icons))
         if workspace.name == new_name:
             continue
         i3.command(
