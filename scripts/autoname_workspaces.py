@@ -49,23 +49,25 @@ from util import *
 # then click on the application you want to inspect.
 WINDOW_ICONS = {
     'alacritty': fa.icons['terminal'],
-    'kitty': '',
-    'feh': fa.icons['image'],
-    'sxiv': fa.icons['image'],
-    'gimp-2.10': '',
-    'zathura': '龎',
-    'rtv': fa.icons['reddit-alien'],
     'chromium': fa.icons['chrome'],
-    'smplayer': fa.icons['play'],
-    'vlc': '嗢',
-    'spotify': fa.icons['music'],
+    'ckb-next': '',
+    'feh': fa.icons['image'],
+    'gimp-2.10': '',
+    'glances': fa.icons['chart-area'],
+    'kitty': '',
+    'kupfer.py': fa.icons['rocket'],
+    'mpv': fa.icons['play'],
+    'pavucontrol': '蓼',
     'qbittorrent': fa.icons['download'],
     'ranger': fa.icons['folder-open'],
-    'pavucontrol': '蓼',
-    'ckb-next': '',
-    'glances': fa.icons['chart-area'],
+    'rtv': fa.icons['reddit-alien'],
+    'smplayer': fa.icons['play'],
+    'sncli': fa.icons['sticky-note'],
+    'spotify': fa.icons['music'],
+    'sxiv': fa.icons['image'],
     'vim': '',
-    'sncli': fa.icons['sticky-note']
+    'vlc': '嗢',
+    'zathura': '龎',
 }
 
 # This icon is used for any application not in the list above
