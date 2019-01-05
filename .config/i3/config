@@ -151,7 +151,7 @@ gaps outer 10
 smart_gaps on
 smart_borders on
 # Allow toggling of gaps on/off
-bindsym $mod+g $exec ~/scripts/toggle_gaps
+bindsym $mod+g $exec ~/scripts/toggle_gaps.sh
 
 # Startup
 $exec compton --config ~/.config/compton.conf -b
