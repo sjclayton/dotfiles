@@ -37,7 +37,6 @@ floating_modifier $mod
 
 # Start a terminal
 bindsym $mod+Return $exec $term
-bindsym $mod+Shift+Return $exec alacritty
 
 # Update search indexes
 bindsym $mod+Mod1+Return $exec updatedb -l 0 -o ~/.Archive.db -U /var/run/media/shaun/Archive && updatedb -l 0 -o ~/.home.db -U /home/shaun
