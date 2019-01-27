@@ -1,8 +1,8 @@
 #!/bin/bash
 
-MON0=`xrandr -q | grep 'HDMI1 connected'`
-MON1=`xrandr --output eDP1 --auto --output HDMI1 --auto --right-of eDP1`
-MON2=`xrandr --output eDP1 --auto`
+MON0=`xrandr -q | grep 'HDMI-1 connected'`
+MON1=`xrandr --output eDP-1 --auto --output HDMI-1 --auto --right-of eDP-1`
+MON2=`xrandr --output eDP-1 --auto`
 
 # Terminate already running bar instances
 killall -q polybar
@@ -10,7 +10,7 @@ killall -q polybar
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-if [ -n "$MON0" ] || [ ! "$MON0" = "" ]; then 
+if [ -n "$MON0" ] || [ ! "$MON0" = "" ]; then
 	echo $MON1
 	#xrandr --dpi 92x88
 	xrandr --dpi 96
@@ -21,7 +21,7 @@ if [ -n "$MON0" ] || [ ! "$MON0" = "" ]; then
 else
 	echo $MON2
 	#xrandr --dpi 99x103
-	xrandr --dpi eDP1
+	xrandr --dpi "eDP-1"
 	sleep 1
 	polybar -r mobile &
 	echo "Bar launched..."
