@@ -37,15 +37,6 @@ for config ($ZSH_SHAUN/**/*.zsh) source $config
 # Override auto-title when static titles are desired ($ title My new title)
 title() { export TITLE_OVERRIDDEN=1; echo -en "\e]0;$*\a"}
 
-# Prevent nested ranger instances
-ranger() {
-    if [ -z "$RANGER_LEVEL" ]; then
-        /usr/bin/ranger "$@"
-    else
-        exit
-    fi
-}
-
 # Colorize man page output
 man(){
     local width=$(tput cols)
@@ -60,6 +51,12 @@ man(){
     LESS_TERMCAP_us=$'\e[04;33m' \
     command man "$@"
 }
+
+# Plasma blur some shit
+if [[ $(ps --no-header -p $PPID -o comm) =~ '^kitty$' ]]; then
+        for wid in $(xdotool search --pid $PPID); do
+            xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $wid; done
+fi
 
 eval "$(fasd --init auto)"
 xset r rate 200 100
