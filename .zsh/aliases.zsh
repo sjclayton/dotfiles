@@ -8,6 +8,7 @@ alias cfgd="cfg difftool --no-symlinks --dir-diff"
 alias omd="kitty +kitten diff"
 alias omgd="git difftool --no-symlinks --dir-diff"
 alias ls="ls --color=tty --group-directories-first"
+alias lsd="lsd -la -rt --group-dirs first"
 alias sudo="nocorrect sudo -E "
 
 # Shortcuts
