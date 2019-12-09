@@ -35,8 +35,6 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'tweekmonster/startuptime.vim'
-Plug 'mhinz/vim-startify'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
@@ -47,6 +45,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'ryanoasis/vim-devicons'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 "}}}
@@ -67,26 +66,12 @@ let NERDTreeNaturalSort = 1
 "}}}
 " Interface Settings {{{
 
-" Startify
-let g:startify_fortune_use_unicode = 1
-let g:startify_files_number = 5
-let g:startify_padding_left = 10
-function! StartifyEntryFormat()
-	return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
-endfunction
-function! s:filter_header(lines) abort
-	let longest_line   = max(map(copy(a:lines), 'strwidth(v:val)'))
-	let centered_lines = map(copy(a:lines), 'repeat(" ", (&columns / 2) - (longest_line / 2)) . v:val')
-	return centered_lines
-endfunction
-let g:startify_custom_header = s:filter_header(startify#fortune#cowsay())
-
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_powerline_fonts = 1
-" let g:airline_skip_empty_sections = 1
+let g:airline_skip_empty_sections = 1
 
 " Gruvbox
 set background=dark
@@ -134,5 +119,9 @@ nnoremap <Leader>n :NERDTreeToggle<cr>
 nnoremap <Leader>nl :NERDTreeFind<cr>
 
 "}}}
+" Sources {{{
+
+" CoC
+source /home/shaun/.config/nvim/cocrc.vim
 
 " vim:fdm=marker
