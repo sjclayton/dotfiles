@@ -9,11 +9,11 @@ let mapleader = ","
 let maplocalleader = ","
 
 " Enable 24-bit color
-if !has('gui')
-	let &t_8f = "[38;2;%lu;%lu;%lum"
-	let &t_8b = "[48;2;%lu;%lu;%lum"
-	let &t_ut = ''
-	set termguicolors
+if (has("nvim"))
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+if (has("termguicolors"))
+  set termguicolors
 endif
 
 set dictionary+=/usr/share/dict/words
@@ -24,6 +24,7 @@ set noshowmode
 set number relativenumber " Show line numbers
 set cursorline " Highlight current line
 set splitbelow splitright
+syntax on
 
 "}}}
 " Plugins {{{
@@ -37,7 +38,9 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'morhetz/gruvbox'
+" Plug 'dylanaraps/wal.vim'
+" Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-surround'
@@ -45,6 +48,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'ryanoasis/vim-devicons'
+Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
@@ -67,18 +71,22 @@ let NERDTreeNaturalSort = 1
 " Interface Settings {{{
 
 " Airline
+let g:airline_theme='onedark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_powerline_fonts = 1
-let g:airline_skip_empty_sections = 1
+let g:airline_skip_empty_sections = 0
 
 " Gruvbox
-set background=dark
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_number_column = 'bg1'
-let g:gruvbox_italic = 1
-colorscheme gruvbox
+" set background=dark
+" let g:gruvbox_contrast_dark = 'hard'
+" let g:gruvbox_number_column = 'bg1'
+" let g:gruvbox_italic = 1
+" colorscheme gruvbox
+
+" One Dark
+colorscheme onedark
 
 "}}}
 " Keymappings {{{
