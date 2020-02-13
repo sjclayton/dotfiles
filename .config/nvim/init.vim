@@ -38,8 +38,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Plug 'dylanaraps/wal.vim'
-" Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'ctrlpvim/ctrlp.vim'
@@ -77,13 +75,6 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 0
-
-" Gruvbox
-" set background=dark
-" let g:gruvbox_contrast_dark = 'hard'
-" let g:gruvbox_number_column = 'bg1'
-" let g:gruvbox_italic = 1
-" colorscheme gruvbox
 
 " One Dark
 colorscheme onedark

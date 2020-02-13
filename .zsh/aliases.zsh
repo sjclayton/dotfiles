@@ -11,6 +11,7 @@ alias ls="ls --color=tty --group-directories-first"
 alias lsd="lsd -la -rt --group-dirs first"
 alias sudo="nocorrect sudo -E "
 alias glances="glances --disable-bg"
+alias used="du -ah -d 1 | sort -rh | less"
 
 # Shortcuts
 alias zshrc="$EDITOR ~/.zshrc"
